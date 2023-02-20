@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Woodsman_Walk
+  m_Name: Owl_Land_Idle
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,13 +20,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -1936017095, guid: 5bfe09cf16eb8554c8955e8b82ab8388, type: 3}
+      value: {fileID: 1142596014, guid: f5d571b4d0f853844b6ea7f38e7480ea, type: 3}
     - time: 0.083333336
-      value: {fileID: -1011462960, guid: 5bfe09cf16eb8554c8955e8b82ab8388, type: 3}
+      value: {fileID: 1089890585, guid: f5d571b4d0f853844b6ea7f38e7480ea, type: 3}
     - time: 0.16666667
-      value: {fileID: 1882826531, guid: 5bfe09cf16eb8554c8955e8b82ab8388, type: 3}
+      value: {fileID: 1249135085, guid: f5d571b4d0f853844b6ea7f38e7480ea, type: 3}
     - time: 0.25
-      value: {fileID: 1356739076, guid: 5bfe09cf16eb8554c8955e8b82ab8388, type: 3}
+      value: {fileID: -402157473, guid: f5d571b4d0f853844b6ea7f38e7480ea, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -46,10 +46,10 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -1936017095, guid: 5bfe09cf16eb8554c8955e8b82ab8388, type: 3}
-    - {fileID: -1011462960, guid: 5bfe09cf16eb8554c8955e8b82ab8388, type: 3}
-    - {fileID: 1882826531, guid: 5bfe09cf16eb8554c8955e8b82ab8388, type: 3}
-    - {fileID: 1356739076, guid: 5bfe09cf16eb8554c8955e8b82ab8388, type: 3}
+    - {fileID: 1142596014, guid: f5d571b4d0f853844b6ea7f38e7480ea, type: 3}
+    - {fileID: 1089890585, guid: f5d571b4d0f853844b6ea7f38e7480ea, type: 3}
+    - {fileID: 1249135085, guid: f5d571b4d0f853844b6ea7f38e7480ea, type: 3}
+    - {fileID: -402157473, guid: f5d571b4d0f853844b6ea7f38e7480ea, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
