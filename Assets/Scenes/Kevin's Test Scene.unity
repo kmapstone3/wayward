@@ -223,6 +223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraSpeed: 10
   target: {fileID: 1407697187}
+  activeCharacter: {fileID: 1407697186}
 --- !u!114 &443201475
 MonoBehaviour:
   m_ObjectHideFlags: 0

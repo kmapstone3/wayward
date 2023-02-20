@@ -8,8 +8,6 @@ public class Character : MonoBehaviour
 
     public Character other;
 
-    [SerializeField] private bool controlsActive;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -17,12 +15,9 @@ public class Character : MonoBehaviour
     }
 
     // Update is called once per frame
-    protected virtual void Update()
+    void Update()
     {
-        if(!controlsActive)
-            return;
-
-        TestInput();
+        
     }
 
     public virtual void TestInput()
@@ -30,31 +25,13 @@ public class Character : MonoBehaviour
         //Debug.Log(name);
 
         if(Input.GetKeyDown(KeyCode.Space))
-            StartCoroutine(OnSwap());
+            Swap();
     }
 
-    public virtual IEnumerator OnSwap()
+    public virtual void Swap()
     {
-        // Disable this character's controls
-        DisableControls();
-        
-        // Wait one frame so both characters aren't active
-        yield return null;
-        
-        // Enable other character's controls
-        other.EnableControls();
-    }
-
-    public void EnableControls()
-    {
-        cameraController.SetTarget(transform);
-
-        controlsActive = true;
-    }
-
-    public void DisableControls()
-    {
-        controlsActive = false;
+        cameraController.SetActiveCharacter(other);
+        cameraController.SetTarget(other.transform);
     }
 
     public virtual void Move(Vector2 dir)

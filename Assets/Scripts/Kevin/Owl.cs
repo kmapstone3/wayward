@@ -11,9 +11,9 @@ public class Owl : Character
     }
 
     // Update is called once per frame
-    protected override void Update()
+    void Update()
     {
-        base.Update();
+        
     }
 
     public override void TestInput()
