@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Woodsman : Character
 {
+    public Transform owlTransform;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,16 @@ public class Woodsman : Character
     {
         base.TestInput();
 
+        if(Input.GetKeyDown(KeyCode.Q))
+            PickUpOwl();
+
         Move(new Vector2(Input.GetAxis("Horizontal"), 0));
+    }
+
+    public void PickUpOwl()
+    {
+        other.transform.SetParent(owlTransform);
+
+        other.transform.localPosition = Vector3.zero;
     }
 }
