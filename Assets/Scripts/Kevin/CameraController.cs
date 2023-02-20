@@ -23,6 +23,11 @@ public class CameraController : MonoBehaviour
         MoveTowardsTarget();
     }
 
+    private void FixedUpdate()
+    {
+        
+    }
+
     public void MoveTowardsTarget()
     {
         if(target == null)

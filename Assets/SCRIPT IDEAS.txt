@@ -1,0 +1,8 @@
+class: Character
+	public virtual void OnSwap();
+class: Woodsman : Character
+	override OnSwap();
+	[Movement]
+class: Owl : Character
+	override OnSwap();
+	[Movement]

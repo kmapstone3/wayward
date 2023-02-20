@@ -13,17 +13,17 @@ public class Woodsman : Character
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
-        
+        base.Update();
     }
 
     public override void TestInput()
     {
         base.TestInput();
 
-        if(Input.GetKeyDown(KeyCode.Q))
-            PickUpOwl();
+        //if(Input.GetKeyDown(KeyCode.Q))
+            //PickUpOwl();
 
         Move(new Vector2(Input.GetAxis("Horizontal"), 0));
     }

@@ -1,0 +1,14 @@
+WOODSMAN:
+Base State
+	- Move and jump
+Grabbing State?
+
+OWL:
+Grounded State
+	- Can move and jump just like Woodsman
+Flying State
+	- Activated by pressing W while airborne
+	- Deactivated by pressing Space while airborne
+	- Can move in all directions WASD when flying
+
+- Should movement be position-based or velocity-based?
