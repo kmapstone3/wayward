@@ -26,13 +26,17 @@ public class TitleScreen : MonoBehaviour
 
     public void Controls()
     {
-        //SceneManager.LoadScene(SceneName);
+        SceneManager.LoadScene("Controls");
     }
 
     public void Quit()
     {
         Application.Quit();
     }
-
+    
+    public void back()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
    
 }
