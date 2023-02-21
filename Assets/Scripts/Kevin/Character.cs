@@ -27,6 +27,7 @@ public class Character : MonoBehaviour
     protected virtual void Update()
     {
         anim.SetBool("Moving", isMoving);
+        anim.SetBool("Grounded", isGrounded);
     }
 
     public virtual void TestInput()
@@ -48,9 +49,27 @@ public class Character : MonoBehaviour
 
     public virtual void Move(Vector2 dir)
     {
+        if(dir == Vector2.zero)
+            return;
+
         isMoving = true;
 
+        //if(dir.x < 0) 
+        //    transform.localScale.Set(-1, transform.localScale.y, 1);
+        //else
+        //    transform.localScale.Set(1, transform.localScale.y, 1);
+
+        // If facing in direction opposite of motion, flip transform
+        if(transform.localScale.x > 0 != dir.x > 0)
+            FlipTransform();
+
         transform.position += (Vector3) dir.normalized * moveSpeed * Time.deltaTime;
+    }
+
+    void FlipTransform()
+    {
+        // Negate scale x, keep scale y
+        transform.localScale *= new Vector2(-1, 1);
     }
 
     public virtual void Jump()
