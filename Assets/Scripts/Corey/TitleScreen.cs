@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class TitleScreen : MonoBehaviour
 {
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -17,10 +19,24 @@ public class TitleScreen : MonoBehaviour
     }
 
 
-    public void titleScreenButton()
+    public void Play()
     {
-     
+        //SceneManager.LoadScene(SceneName);
     }
 
+    public void Controls()
+    {
+        SceneManager.LoadScene("Controls");
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
+    
+    public void back()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
    
 }
