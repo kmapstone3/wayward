@@ -26,6 +26,11 @@ public class Character : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
+        UpdateAnimationParameters();
+    }
+
+    protected virtual void UpdateAnimationParameters()
+    {
         anim.SetBool("Moving", isMoving);
         anim.SetBool("Grounded", isGrounded);
     }
@@ -45,6 +50,8 @@ public class Character : MonoBehaviour
     {
         cameraController.SetActiveCharacter(other);
         cameraController.SetTarget(other.transform);
+
+        isMoving = false;
     }
 
     public virtual void Move(Vector2 dir)
@@ -53,11 +60,6 @@ public class Character : MonoBehaviour
             return;
 
         isMoving = true;
-
-        //if(dir.x < 0) 
-        //    transform.localScale.Set(-1, transform.localScale.y, 1);
-        //else
-        //    transform.localScale.Set(1, transform.localScale.y, 1);
 
         // If facing in direction opposite of motion, flip transform
         if(transform.localScale.x > 0 != dir.x > 0)
@@ -76,6 +78,7 @@ public class Character : MonoBehaviour
     {
         // ANIM JUMP
         anim.SetTrigger("Jump");
+        isGrounded = false;
 
         rb.velocity = Vector2.up * jumpSpeed;
     }
