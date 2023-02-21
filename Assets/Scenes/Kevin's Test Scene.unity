@@ -266,7 +266,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1287606818}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: OwlTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 1407697191}
   - component: {fileID: 1407697192}
   - component: {fileID: 1407697186}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Woodsman
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -327,7 +327,7 @@ MonoBehaviour:
   cameraController: {fileID: 443201474}
   other: {fileID: 1994672318}
   moveSpeed: 3
-  jumpSpeed: 5
+  jumpSpeed: 10
   isMoving: 0
   owlTransform: {fileID: 1287606818}
 --- !u!4 &1407697187
@@ -414,7 +414,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -612,7 +612,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1648802499}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GrabbedObjectTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -649,7 +649,7 @@ GameObject:
   - component: {fileID: 1994672323}
   - component: {fileID: 1994672324}
   - component: {fileID: 1994672318}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Owl
   m_TagString: Player
   m_Icon: {fileID: 0}

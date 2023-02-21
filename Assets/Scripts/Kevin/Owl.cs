@@ -24,6 +24,13 @@ public class Owl : Character
         base.Update();
     }
 
+    protected override void UpdateAnimationParameters()
+    {
+        base.UpdateAnimationParameters();
+
+        anim.SetFloat("Movement State", (float) movementState);
+    }
+
     private void FixedUpdate()
     {
         // If Owl is flying, no gravity
