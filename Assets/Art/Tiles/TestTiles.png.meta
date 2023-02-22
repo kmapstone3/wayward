@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f5d571b4d0f853844b6ea7f38e7480ea
+guid: 13d65212f3f215d4693e12766e82df1a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 8
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TempOwlLandIdle_0
+      name: TestTiles_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 100
-        width: 100
-        height: 100
+        y: 16
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ac18055287455e4982b32fefdfe100b
-      internalID: 1142596014
+      spriteID: fc4e533cc5660764da565b54ece3d051
+      internalID: 1476997672
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TempOwlLandIdle_1
+      name: TestTiles_1
       rect:
         serializedVersion: 2
-        x: 100
-        y: 100
-        width: 100
-        height: 100
+        x: 8
+        y: 16
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +152,104 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6e0c2bc1b1091742ac1dae5c98643e5
-      internalID: 1089890585
+      spriteID: e1b9ecfcdfbf79045900bc54779c3dc0
+      internalID: -1383791531
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TempOwlLandIdle_2
+      name: TestTiles_2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c9543be02baa6a4792a3504d3c10027
+      internalID: -1760875915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestTiles_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3e19be3f741aef4a90a4878aea262d3
+      internalID: -103554844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestTiles_4
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 8
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa3a228dd8109884d89445a0afbfbc36
+      internalID: -724484244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestTiles_5
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 8
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb16bcccb6c8377428fee861846452f7
+      internalID: -1034686035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestTiles_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 100
-        height: 100
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +257,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1912240fdcba1a44d92c32a8482a0709
-      internalID: 1249135085
+      spriteID: 931dad137fc58f4488f5ec60c71d60bc
+      internalID: -1741572346
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TempOwlLandIdle_3
+      name: TestTiles_7
       rect:
         serializedVersion: 2
-        x: 100
+        x: 8
         y: 0
-        width: 100
-        height: 100
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,8 +278,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f12c020ad92e9545b97c8b382eeb8ce
-      internalID: -402157473
+      spriteID: 0b341533622dc8045895bf6d029d87fe
+      internalID: -1246189761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestTiles_8
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0a87763060148a44a13639695cc821a
+      internalID: -512295919
       vertices: []
       indices: 
       edges: []
@@ -211,10 +316,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TempOwlLandIdle_2: 1249135085
-      TempOwlLandIdle_3: -402157473
-      TempOwlLandIdle_1: 1089890585
-      TempOwlLandIdle_0: 1142596014
+      TestTiles_7: -1246189761
+      TestTiles_0: 1476997672
+      TestTiles_8: -512295919
+      TestTiles_6: -1741572346
+      TestTiles_1: -1383791531
+      TestTiles_3: -103554844
+      TestTiles_5: -1034686035
+      TestTiles_4: -724484244
+      TestTiles_2: -1760875915
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

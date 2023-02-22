@@ -5,11 +5,16 @@ using UnityEngine;
 public class Interactable : MonoBehaviour
 {
     public Animator anim;
+    [Tooltip("The area the mouse must be within to select this Interactable "
+        + "(Character region is specified by trigger collider attached to this GameObject).")]
     public Collider2D interactionArea;
+    public CharacterType characterType;
 
     public Interaction action;
 
+    protected Character character = null;
     [SerializeField] protected bool isActive;
+    protected bool isCharacterNearby = false;
     protected bool isHighlighted = false;
 
     // Start is called before the first frame update
@@ -24,6 +29,11 @@ public class Interactable : MonoBehaviour
         if(!isActive)
             return;
 
+        if(character != null)
+            isCharacterNearby = character.IsCharacterActive();
+        else
+            isCharacterNearby = false;
+
         CheckForMouse();
 
         // Left click when highlighted to interact
@@ -33,6 +43,12 @@ public class Interactable : MonoBehaviour
 
     public void CheckForMouse()
     {
+        if(!isCharacterNearby || character == null)
+        {
+            isHighlighted = false;
+            return;
+        }
+
         Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         // Update highlighted status based on whether mouse is in interactionArea
@@ -59,8 +75,20 @@ public class Interactable : MonoBehaviour
         isActive = true;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("k");
+        //if(other.gameObject.layer == LayerMask.NameToLayer(characterType.ToString()) || characterType == CharacterType.Both)
+        //{
+
+        //}
+
+        if(other.CompareTag("Player"))
+            character = other.GetComponent<Character>();
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if(other.CompareTag("Player"))
+            character = null;
     }
 }

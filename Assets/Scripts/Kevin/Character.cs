@@ -2,6 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum CharacterType
+{
+    Woodsman,
+    Owl,
+    Both
+}
+
 public class Character : MonoBehaviour
 {
     public Rigidbody2D rb;
@@ -86,6 +93,11 @@ public class Character : MonoBehaviour
     protected virtual bool CanJump()
     {
         return isGrounded;
+    }
+
+    public bool IsCharacterActive()
+    {
+        return cameraController.GetActiveCharacter() == this;
     }
 
     private void OnTriggerStay2D(Collider2D other)

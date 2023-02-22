@@ -37,6 +37,8 @@ public class CameraController : MonoBehaviour
         transform.position += (Vector3) delta;
     }
 
+    public Character GetActiveCharacter() => activeCharacter;
+
     public void SetActiveCharacter(Character character)
     {
         activeCharacter = character;

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 362970020565134875}
   - component: {fileID: 362970020565134876}
   - component: {fileID: 362970020565134950}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Owl
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 100
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -143,7 +143,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.09094389, y: -0.05497685}
+  m_Offset: {x: 0.09094389, y: -0.04683061}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -154,7 +154,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.38188776, y: 0.88547903}
+  m_Size: {x: 0.38188776, y: 0.8691865}
   m_EdgeRadius: 0
 --- !u!61 &362970020565134876
 BoxCollider2D:
