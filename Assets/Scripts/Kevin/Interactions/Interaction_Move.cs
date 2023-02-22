@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
 
-public class InteractionMove : Interaction
+public class Interaction_Move : Interaction
 {
     public Rigidbody2D rb;
 

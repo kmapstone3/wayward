@@ -6,6 +6,8 @@ public abstract class Interaction : MonoBehaviour
 {
     public float duration;
 
+    public bool collisionType;
+
     // Start is called before the first frame update
     void Start()
     {

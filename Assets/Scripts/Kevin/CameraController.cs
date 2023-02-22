@@ -15,10 +15,19 @@ public class CameraController : MonoBehaviour
         
     }
 
+    // Called after starting animation by other object
+    public void Initialize()
+    {
+        SetActiveCharacter(FindObjectOfType<Woodsman>());
+
+        Debug.Log("k");
+    }
+
     // Update is called once per frame
     void Update()
     {
-        activeCharacter.TestInput();
+        if(activeCharacter != null)
+            activeCharacter.TestInput();
 
         MoveTowardsTarget();
     }
