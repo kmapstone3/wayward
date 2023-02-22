@@ -14,7 +14,7 @@ public class Character : MonoBehaviour
     public float moveSpeed;
     public float jumpSpeed;
 
-    [SerializeField] protected bool isMoving = false;
+    protected bool isMoving = false;
     protected bool isGrounded;
 
     // Start is called before the first frame update
@@ -88,17 +88,17 @@ public class Character : MonoBehaviour
         return isGrounded;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         // Ground Check
-        if(other.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        if(!other.isTrigger)
             isGrounded = true;
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         // Ground Check
-        if(other.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        if(!other.isTrigger)
             isGrounded = false;
     }
 }

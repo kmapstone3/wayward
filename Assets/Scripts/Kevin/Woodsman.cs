@@ -15,7 +15,6 @@ public class Woodsman : Character
     // Update is called once per frame
     protected override void Update()
     {
-        Debug.Log(isMoving);
         base.Update();
     }
 

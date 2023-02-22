@@ -12,10 +12,10 @@ TagManager:
   - Water
   - UI
   - Character
-  - 
-  - 
-  - 
-  - 
+  - Object Barrier
+  - Character Barrier
+  - Woodsman Barrier
+  - Owl Barrier
   - 
   - 
   - 
@@ -40,4 +40,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Character
+    uniqueID: 1489815667
     locked: 0
