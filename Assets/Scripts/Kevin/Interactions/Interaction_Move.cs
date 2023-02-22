@@ -26,7 +26,8 @@ public class Interaction_Move : Interaction
 
     private void Awake()
     {
-        rb.bodyType = RigidbodyType2D.Static;
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        //rb.bodyType = RigidbodyType2D.Static;
     }
 
     // Update is called once per frame
@@ -39,7 +40,8 @@ public class Interaction_Move : Interaction
     {
         Vector2 initialVelocity = rb.velocity;
 
-        rb.bodyType = RigidbodyType2D.Dynamic;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        //rb.bodyType = RigidbodyType2D.Dynamic;
 
         float startTime = Time.time;
         while(Time.time < startTime + duration)
@@ -53,7 +55,8 @@ public class Interaction_Move : Interaction
 
         rb.velocity = initialVelocity;
 
-        rb.bodyType = RigidbodyType2D.Static;
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        //rb.bodyType = RigidbodyType2D.Static;
 
         transform.position = new Vector2(Mathf.Round(transform.position.x * 2) / 2, Mathf.Round(transform.position.y * 2) / 2);
 

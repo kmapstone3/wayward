@@ -32,11 +32,13 @@ public class Trigger_TriggerSystem : Trigger
 
     public void ActivateSlot(int slot)
     {
+        Debug.Log("Activate " + slot);
         slots[slot] = true;
     }
 
     public void DeactivateSlot(int slot)
     {
+        Debug.Log("Deactivate " + slot);
         slots[slot] = false;
     }
 }
