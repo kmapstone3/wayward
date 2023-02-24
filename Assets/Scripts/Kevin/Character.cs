@@ -50,13 +50,15 @@ public class Character : MonoBehaviour
             Jump();
 
         if(Input.GetKeyDown(KeyCode.Q))
-            Swap();
+            StartCoroutine(Swap());
     }
 
-    public virtual void Swap()
+    public virtual IEnumerator Swap()
     {
         cameraController.SetActiveCharacter(other);
         cameraController.SetTarget(other.transform);
+
+        yield return null;
 
         isMoving = false;
     }

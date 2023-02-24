@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Main Sprite Atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 9986901692f49d74699f1c9fae6be3dc, type: 3}
+    - {fileID: 2800000, guid: 762fc744878bca648968eb4202ff146f, type: 3}
+    - {fileID: 2800000, guid: 5bfe09cf16eb8554c8955e8b82ab8388, type: 3}
+    - {fileID: 2800000, guid: f5d571b4d0f853844b6ea7f38e7480ea, type: 3}
+    - {fileID: 2800000, guid: e04c5c4a025ba1d47b9de02e5a3dd177, type: 3}
+    - {fileID: 2800000, guid: 0b4d0596f40cbb648a888ab1034d23bf, type: 3}
+    - {fileID: 2800000, guid: 455da75af4b723f4cbbfd0ae681924f5, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: -428721287, guid: 762fc744878bca648968eb4202ff146f, type: 3}
+  - {fileID: -35231390, guid: 762fc744878bca648968eb4202ff146f, type: 3}
+  - {fileID: 1089890585, guid: f5d571b4d0f853844b6ea7f38e7480ea, type: 3}
+  - {fileID: 1142596014, guid: f5d571b4d0f853844b6ea7f38e7480ea, type: 3}
+  - {fileID: -402157473, guid: f5d571b4d0f853844b6ea7f38e7480ea, type: 3}
+  - {fileID: 1249135085, guid: f5d571b4d0f853844b6ea7f38e7480ea, type: 3}
+  - {fileID: 1462388304, guid: 9986901692f49d74699f1c9fae6be3dc, type: 3}
+  - {fileID: -1616298458, guid: 9986901692f49d74699f1c9fae6be3dc, type: 3}
+  - {fileID: 337202045, guid: 9986901692f49d74699f1c9fae6be3dc, type: 3}
+  - {fileID: 423530569, guid: 9986901692f49d74699f1c9fae6be3dc, type: 3}
+  - {fileID: 1914768001, guid: 0b4d0596f40cbb648a888ab1034d23bf, type: 3}
+  - {fileID: -291077784, guid: 0b4d0596f40cbb648a888ab1034d23bf, type: 3}
+  - {fileID: 2045438641, guid: 0b4d0596f40cbb648a888ab1034d23bf, type: 3}
+  - {fileID: -86848531, guid: 0b4d0596f40cbb648a888ab1034d23bf, type: 3}
+  - {fileID: 384482195, guid: e04c5c4a025ba1d47b9de02e5a3dd177, type: 3}
+  - {fileID: 724136548, guid: e04c5c4a025ba1d47b9de02e5a3dd177, type: 3}
+  - {fileID: -1230817299, guid: e04c5c4a025ba1d47b9de02e5a3dd177, type: 3}
+  - {fileID: 1949209203, guid: e04c5c4a025ba1d47b9de02e5a3dd177, type: 3}
+  - {fileID: -1525994199, guid: 455da75af4b723f4cbbfd0ae681924f5, type: 3}
+  - {fileID: 1086400841, guid: 455da75af4b723f4cbbfd0ae681924f5, type: 3}
+  - {fileID: -348648366, guid: 455da75af4b723f4cbbfd0ae681924f5, type: 3}
+  - {fileID: 1361951261, guid: 455da75af4b723f4cbbfd0ae681924f5, type: 3}
+  - {fileID: -1487178558, guid: 455da75af4b723f4cbbfd0ae681924f5, type: 3}
+  - {fileID: -1011462960, guid: 5bfe09cf16eb8554c8955e8b82ab8388, type: 3}
+  - {fileID: -1936017095, guid: 5bfe09cf16eb8554c8955e8b82ab8388, type: 3}
+  - {fileID: 1356739076, guid: 5bfe09cf16eb8554c8955e8b82ab8388, type: 3}
+  - {fileID: 1882826531, guid: 5bfe09cf16eb8554c8955e8b82ab8388, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - TempWoodsmanJump_0
+  - TempWoodsmanJump_1
+  - TempOwlLandIdle_1
+  - TempOwlLandIdle_0
+  - TempOwlLandIdle_3
+  - TempOwlLandIdle_2
+  - TempWoodsmanIdle_0
+  - TempWoodsmanIdle_1
+  - TempWoodsmanIdle_2
+  - TempWoodsmanIdle_3
+  - TempOwlFlyIdle_3
+  - TempOwlFlyIdle_2
+  - TempOwlFlyIdle_1
+  - TempOwlFlyIdle_0
+  - TempOwlLandWalk_0
+  - TempOwlLandWalk_1
+  - TempOwlLandWalk_2
+  - TempOwlLandWalk_3
+  - TempOwlFly_4
+  - TempOwlFly_1
+  - TempOwlFly_0
+  - TempOwlFly_3
+  - TempOwlFly_2
+  - TempWoodsmanWalk_1
+  - TempWoodsmanWalk_0
+  - TempWoodsmanWalk_3
+  - TempWoodsmanWalk_2
+  m_RenderDataMap: {}
+  m_Tag: Character Sprite Atlas
+  m_IsVariant: 0
