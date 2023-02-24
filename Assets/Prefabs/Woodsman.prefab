@@ -110,7 +110,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1489815667
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 1462388304, guid: 9986901692f49d74699f1c9fae6be3dc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -233,6 +233,7 @@ MonoBehaviour:
   other: {fileID: 0}
   moveSpeed: 3
   jumpSpeed: 10
+  deathAnimationDuration: 2
   owlTransform: {fileID: 2255262378916580152}
 --- !u!1 &2255262379348190168
 GameObject:

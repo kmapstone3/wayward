@@ -112,5 +112,5 @@ SpriteAtlas:
   - TempWoodsmanWalk_3
   - TempWoodsmanWalk_2
   m_RenderDataMap: {}
-  m_Tag: Character Sprite Atlas
+  m_Tag: Main Sprite Atlas
   m_IsVariant: 0

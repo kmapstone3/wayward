@@ -200,3 +200,4 @@ MonoBehaviour:
   other: {fileID: 0}
   moveSpeed: 3
   jumpSpeed: 5
+  deathAnimationDuration: 2

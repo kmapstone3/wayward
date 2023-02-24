@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum CharacterType
 {
@@ -21,8 +22,11 @@ public class Character : MonoBehaviour
     public float moveSpeed;
     public float jumpSpeed;
 
+    public float deathAnimationDuration;
+
     protected bool isMoving = false;
     protected bool isGrounded;
+    protected bool isDead = false;
 
     // Start is called before the first frame update
     void Start()
@@ -44,13 +48,20 @@ public class Character : MonoBehaviour
 
     public virtual void TestInput()
     {
+        //defaults
         isMoving = false;
 
+        // Jump
         if(Input.GetKeyDown(KeyCode.Space) && CanJump())
             Jump();
 
+        // Swap Characters
         if(Input.GetKeyDown(KeyCode.Q))
             StartCoroutine(Swap());
+
+        // Force-Death
+        if(Input.GetKeyDown(KeyCode.E))
+            StartCoroutine(Die());
     }
 
     public virtual IEnumerator Swap()
@@ -92,6 +103,22 @@ public class Character : MonoBehaviour
         rb.velocity = Vector2.up * jumpSpeed;
     }
 
+    public IEnumerator Die()
+    {
+        isDead = true;
+
+        // Make sure camera is focused on this character
+        cameraController.SetActiveCharacter(this);
+        cameraController.SetTarget(transform);
+
+        anim.SetTrigger("Die");
+
+        yield return new WaitForSeconds(deathAnimationDuration);
+
+        // Reset scene
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     protected virtual bool CanJump()
     {
         return isGrounded;
@@ -101,6 +128,8 @@ public class Character : MonoBehaviour
     {
         return cameraController.GetActiveCharacter() == this;
     }
+
+    public bool IsDead() => isDead;
 
     private void OnTriggerStay2D(Collider2D other)
     {

@@ -8,6 +8,8 @@ public class SceneLoader : MonoBehaviour
 
     public Animator openingAnimator;
 
+    public int openingAnimationDuration;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,12 +18,10 @@ public class SceneLoader : MonoBehaviour
 
     IEnumerator Initialization()
     {
-        yield return null;
-
         //openingAnimator.Play("");
 
-        Debug.Log(openingAnimator.GetCurrentAnimatorStateInfo(0).length);
-        yield return new WaitForSeconds(openingAnimator.GetCurrentAnimatorStateInfo(0).length);
+        //Debug.Log(openingAnimator.GetCurrentAnimatorStateInfo(0).length);
+        yield return new WaitForSeconds(openingAnimationDuration);
 
         // Initialize cameraController
         cameraController.Initialize();

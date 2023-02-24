@@ -30,9 +30,9 @@ public class Interactable : MonoBehaviour
             return;
 
         if(character != null)
-            isCharacterNearby = character.IsCharacterActive();
+            SetIsCharacterNearby(character.IsCharacterActive());
         else
-            isCharacterNearby = false;
+            SetIsCharacterNearby(false);
 
         CheckForMouse();
 
@@ -57,6 +57,13 @@ public class Interactable : MonoBehaviour
             SetHighlighted(highlighted);
     }
 
+    void SetIsCharacterNearby(bool value)
+    {
+        isCharacterNearby = value;
+
+        anim.SetBool("In Range", value);
+    }
+
     // Called when switching between highlighted states
     void SetHighlighted(bool value)
     {
@@ -68,6 +75,8 @@ public class Interactable : MonoBehaviour
     IEnumerator OnInteract()
     {
         isActive = false;
+
+        anim.SetTrigger("Interact");
 
         // Wait for interaction to finish
         yield return action.OnInteract();
