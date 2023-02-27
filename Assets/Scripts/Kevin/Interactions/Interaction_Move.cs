@@ -61,7 +61,7 @@ public class Interaction_Move : Interaction
 
         hazardObject.gameObject.SetActive(false);
 
-        transform.position = new Vector2(Mathf.Round(transform.position.x * 2) / 2, Mathf.Round(transform.position.y * 2) / 2);
+        transform.position = Utils.SnapPosition(transform.position);
 
         directionAngle += -90 * directionRotation;
         directionTransform.eulerAngles = new Vector3(0, 0, directionAngle);
