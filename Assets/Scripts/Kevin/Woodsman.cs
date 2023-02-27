@@ -22,16 +22,29 @@ public class Woodsman : Character
     {
         base.TestInput();
 
-        //if(Input.GetKeyDown(KeyCode.Q))
-            //PickUpOwl();
+        // Press E while within 3 units of Owl to CallOwl
+        if(Input.GetKeyDown(KeyCode.E) && Vector2.Distance(transform.position, other.transform.position) < 3.0f)
+            CallOwl();
 
         Move(new Vector2(Input.GetAxis("Horizontal"), 0));
     }
 
-    public void PickUpOwl()
+    public void CallOwl()
     {
-        other.transform.SetParent(owlTransform);
+        //other.transform.SetParent(owlTransform);
 
-        other.transform.localPosition = Vector3.zero;
+        //other.transform.localPosition = Vector3.zero;
+
+        //Vector3 dir = (owlTransform.position - other.transform.position).normalized;
+        //while(Vector2.Distance(other.transform.position, owlTransform.position) > 0.5f)
+        //{
+        //    other.transform.position += dir * Time.deltaTime;
+
+        //    yield return null;
+        //}
+
+        (other as Owl).SetMovementState(MovementState.Flying);
+
+        other.SetFollow(owlTransform);
     }
 }

@@ -29,6 +29,8 @@ public class Character : MonoBehaviour
     protected bool isGrounded;
     protected bool isDead = false;
 
+    protected Transform followTransform = null;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +41,9 @@ public class Character : MonoBehaviour
     protected virtual void Update()
     {
         UpdateAnimationParameters();
+
+        if(!IsCharacterActive() && followTransform != null)
+            Follow();
     }
 
     protected virtual void UpdateAnimationParameters()
@@ -61,14 +66,16 @@ public class Character : MonoBehaviour
             StartCoroutine(Swap());
 
         // Force-Death
-        if(Input.GetKeyDown(KeyCode.E))
+        if(Input.GetKeyDown(KeyCode.R))
             StartCoroutine(DieCo());
     }
 
     public virtual IEnumerator Swap()
     {
+        // When swapping, set other character to be the active character and the camera target; also disable other character's follow
         cameraController.SetActiveCharacter(other);
         cameraController.SetTarget(other.transform);
+        other.SetFollow(null);
 
         yield return null;
 
@@ -87,6 +94,17 @@ public class Character : MonoBehaviour
             FlipTransform();
 
         transform.position += (Vector3) dir.normalized * moveSpeed * Time.deltaTime;
+    }
+
+    void Follow()
+    {
+        Vector2 diff = followTransform.position - transform.position;
+        if(diff.magnitude < 0.2f)
+            return;
+
+        Vector3 dir = diff.normalized;
+
+        Move(dir);
     }
 
     void FlipTransform()
@@ -132,15 +150,14 @@ public class Character : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    protected virtual bool CanJump()
+    public void SetFollow(Transform target)
     {
-        return isGrounded;
+        followTransform = target;
     }
 
-    public bool IsCharacterActive()
-    {
-        return cameraController.GetActiveCharacter() == this;
-    }
+    protected virtual bool CanJump() => isGrounded;
+
+    public bool IsCharacterActive() => cameraController.GetActiveCharacter() == this;
 
     public bool IsDead() => isDead;
 
