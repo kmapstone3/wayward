@@ -8,6 +8,7 @@ public class Interaction_Move : Interaction
     public Rigidbody2D rb;
 
     public Transform directionTransform;
+    public Hazard hazardObject;
 
     [Tooltip("The amount of direction rotation after each use of this object (1 = 90 degrees clockwise).")]
     public int directionRotation;
@@ -41,7 +42,8 @@ public class Interaction_Move : Interaction
         Vector2 initialVelocity = rb.velocity;
 
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-        //rb.bodyType = RigidbodyType2D.Dynamic;
+
+        hazardObject.gameObject.SetActive(true);
 
         float startTime = Time.time;
         while(Time.time < startTime + duration)
@@ -56,7 +58,8 @@ public class Interaction_Move : Interaction
         rb.velocity = initialVelocity;
 
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
-        //rb.bodyType = RigidbodyType2D.Static;
+
+        hazardObject.gameObject.SetActive(false);
 
         transform.position = new Vector2(Mathf.Round(transform.position.x * 2) / 2, Mathf.Round(transform.position.y * 2) / 2);
 

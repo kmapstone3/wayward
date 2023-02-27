@@ -12,7 +12,6 @@ public class Interactable : MonoBehaviour
 
     public Interaction action;
 
-    protected Character character = null;
     [SerializeField] protected bool isActive;
     protected bool isCharacterNearby = false;
     protected bool isHighlighted = false;
@@ -29,11 +28,6 @@ public class Interactable : MonoBehaviour
         if(!isActive)
             return;
 
-        if(character != null)
-            SetIsCharacterNearby(character.IsCharacterActive());
-        else
-            SetIsCharacterNearby(false);
-
         CheckForMouse();
 
         // Left click when highlighted to interact
@@ -43,7 +37,7 @@ public class Interactable : MonoBehaviour
 
     public void CheckForMouse()
     {
-        if(!isCharacterNearby || character == null)
+        if(!isCharacterNearby)
         {
             isHighlighted = false;
             return;
@@ -84,20 +78,15 @@ public class Interactable : MonoBehaviour
         isActive = true;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
-        //if(other.gameObject.layer == LayerMask.NameToLayer(characterType.ToString()) || characterType == CharacterType.Both)
-        //{
-
-        //}
-
         if(other.CompareTag("Player"))
-            character = other.GetComponent<Character>();
+            SetIsCharacterNearby(other.GetComponent<Character>().IsCharacterActive());
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         if(other.CompareTag("Player"))
-            character = null;
+            SetIsCharacterNearby(false);
     }
 }

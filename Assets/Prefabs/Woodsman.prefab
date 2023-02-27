@@ -229,6 +229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 2255262379106932796}
   anim: {fileID: 2255262379106932787}
+  mainCollider: {fileID: 2255262379106932797}
   cameraController: {fileID: 0}
   other: {fileID: 0}
   moveSpeed: 3

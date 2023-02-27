@@ -14,6 +14,7 @@ public class Character : MonoBehaviour
 {
     public Rigidbody2D rb;
     public Animator anim;
+    public Collider2D mainCollider;
 
     public CameraController cameraController;
 
@@ -61,7 +62,7 @@ public class Character : MonoBehaviour
 
         // Force-Death
         if(Input.GetKeyDown(KeyCode.E))
-            StartCoroutine(Die());
+            StartCoroutine(DieCo());
     }
 
     public virtual IEnumerator Swap()
@@ -103,9 +104,21 @@ public class Character : MonoBehaviour
         rb.velocity = Vector2.up * jumpSpeed;
     }
 
-    public IEnumerator Die()
+    public void Die()
     {
+        StartCoroutine(DieCo());
+    }
+
+    public IEnumerator DieCo()
+    {
+        if(isDead)
+            yield break;
+
         isDead = true;
+
+        // Disable collider and gravity
+        mainCollider.enabled = false;
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
 
         // Make sure camera is focused on this character
         cameraController.SetActiveCharacter(this);
