@@ -33,17 +33,12 @@ public class CameraController : MonoBehaviour
         MoveTowardsTarget();
     }
 
-    private void FixedUpdate()
-    {
-        
-    }
-
     public void MoveTowardsTarget()
     {
         if(target == null)
             return;
 
-        Vector2 delta = (target.position - transform.position).normalized * cameraSpeed * Time.deltaTime;
+        Vector2 delta = (target.position - transform.position) * cameraSpeed * Time.deltaTime;
         transform.position += (Vector3) delta;
     }
 
