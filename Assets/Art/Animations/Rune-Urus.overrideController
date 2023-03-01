@@ -7,5 +7,11 @@ AnimatorOverrideController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Rune-Urus
-  m_Controller: {fileID: 0}
-  m_Clips: []
+  m_Controller: {fileID: 9100000, guid: bc23ca2e5e5c4bd4286ee69c076941e3, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 4dee11923fdae6f418aeed1ddd7038ba, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 53ae32d9d7d9103458df39eaded61a34, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d61e2969ec0ee964d9c44a5c641fa67e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d23f5489c2dbffa488e9bc29ca761217, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 2fea9aeba4b503b4c919f89e9528cb1f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f82a5f01ecbc31f4783325f6ff4dcc2a, type: 2}
