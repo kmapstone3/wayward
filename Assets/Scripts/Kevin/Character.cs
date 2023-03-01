@@ -12,6 +12,8 @@ public enum CharacterType
 
 public class Character : MonoBehaviour
 {
+ 
+
     public Rigidbody2D rb;
     public Animator anim;
     public Collider2D mainCollider;
@@ -34,7 +36,7 @@ public class Character : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+      
     }
 
     // Update is called once per frame
@@ -115,6 +117,7 @@ public class Character : MonoBehaviour
 
     public virtual void Jump()
     {
+        
         // ANIM JUMP
         anim.SetTrigger("Jump");
         isGrounded = false;

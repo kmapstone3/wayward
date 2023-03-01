@@ -4,18 +4,27 @@ using UnityEngine;
 
 public class Woodsman : Character
 {
+    //Audio 
+    private AudioSource _audioSource;
+
     public Transform owlTransform;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        _audioSource = GetComponent<AudioSource>();
     }
+
+    //audio 
+
+  
 
     // Update is called once per frame
     protected override void Update()
     {
         base.Update();
+
+        if (Input.GetKeyDown("space"));
     }
 
     public override void TestInput()
@@ -47,4 +56,6 @@ public class Woodsman : Character
 
         other.SetFollow(owlTransform);
     }
+
+
 }
