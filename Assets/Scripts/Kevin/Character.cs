@@ -118,7 +118,7 @@ public class Character : MonoBehaviour
         // ANIM JUMP
         anim.SetTrigger("Jump");
         isGrounded = false;
-
+        
         rb.velocity = Vector2.up * jumpSpeed;
     }
 
