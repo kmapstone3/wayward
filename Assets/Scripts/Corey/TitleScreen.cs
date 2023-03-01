@@ -21,7 +21,7 @@ public class TitleScreen : MonoBehaviour
 
     public void Play()
     {
-       SceneManager.LoadScene("Kevin's Test Scene");
+       SceneManager.LoadScene("Puzzle 1");
     }
 
     public void Controls()
