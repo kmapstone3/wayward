@@ -2,16 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum MovementState
-{
-    Grounded,
-    Flying
-}
-
 public class Owl : Character
 {
-    private MovementState movementState = MovementState.Grounded;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -64,14 +56,5 @@ public class Owl : Character
     protected override bool CanJump()
     {
         return base.CanJump() && movementState == MovementState.Grounded;
-    }
-
-    public void SetMovementState(MovementState movementState)
-    {
-        this.movementState = movementState;
-
-        // Reset velocity when switching to flying state
-        if(movementState == MovementState.Flying)
-            rb.velocity = Vector2.zero;
     }
 }

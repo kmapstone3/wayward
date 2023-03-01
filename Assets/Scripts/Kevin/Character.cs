@@ -10,10 +10,14 @@ public enum CharacterType
     Both
 }
 
+public enum MovementState
+{
+    Grounded,
+    Flying
+}
+
 public class Character : MonoBehaviour
 {
- 
-
     public Rigidbody2D rb;
     public Animator anim;
     public Collider2D mainCollider;
@@ -26,6 +30,8 @@ public class Character : MonoBehaviour
     public float jumpSpeed;
 
     public float deathAnimationDuration;
+
+    protected MovementState movementState = MovementState.Grounded;
 
     protected bool isMoving = false;
     protected bool isGrounded;
@@ -137,13 +143,21 @@ public class Character : MonoBehaviour
 
         isDead = true;
 
-        // Disable collider and gravity
+        // Disable collider
         mainCollider.enabled = false;
-        rb.constraints = RigidbodyConstraints2D.FreezeAll;
 
         // Make sure camera is focused on this character
         cameraController.SetActiveCharacter(this);
         cameraController.SetTarget(transform);
+
+        // Ground character
+        SetMovementState(MovementState.Grounded);
+
+        while(!isGrounded)
+            yield return null;
+
+        // Disable gravity
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
 
         anim.SetTrigger("Die");
 
@@ -151,6 +165,15 @@ public class Character : MonoBehaviour
 
         // Reset scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void SetMovementState(MovementState movementState)
+    {
+        this.movementState = movementState;
+
+        // Reset velocity when switching to flying state
+        if(movementState == MovementState.Flying)
+            rb.velocity = Vector2.zero;
     }
 
     public void SetFollow(Transform target)
