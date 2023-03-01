@@ -110,7 +110,16 @@ public class Interaction_Move : Interaction
 
         transform.position = Utils.SnapPosition(transform.position);
 
-        directionAngle += -90 * directionRotation;
+        float angleDelta = -90 * directionRotation;
+
+        for(int i = 0; i < Mathf.Abs(angleDelta); i++)
+        {
+            directionTransform.eulerAngles += new Vector3(0, 0, -1 * directionRotation);
+
+            yield return null;
+        }
+
+        directionAngle += angleDelta;
         directionTransform.eulerAngles = new Vector3(0, 0, directionAngle);
     }
 
