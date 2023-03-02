@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7371217814826202890}
   - component: {fileID: 4464488273153346510}
-  m_Layer: 3
+  m_Layer: 11
   m_Name: Rune
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 1176488460557167554}
   - component: {fileID: 1176488460557167553}
   - component: {fileID: 1176488460557167557}
-  m_Layer: 3
+  m_Layer: 11
   m_Name: Interaction Block
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,7 +251,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1176488462124877743}
   - component: {fileID: 1176488462124877742}
-  m_Layer: 3
+  m_Layer: 11
   m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -338,7 +338,7 @@ GameObject:
   - component: {fileID: 8080865463280155866}
   - component: {fileID: 8085339438925102816}
   - component: {fileID: 3793154151660907883}
-  m_Layer: 3
+  m_Layer: 11
   m_Name: Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -409,7 +409,7 @@ GameObject:
   - component: {fileID: 2098091820553560156}
   - component: {fileID: 4078313870514021105}
   - component: {fileID: 918145565328233677}
-  m_Layer: 3
+  m_Layer: 11
   m_Name: Forward Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

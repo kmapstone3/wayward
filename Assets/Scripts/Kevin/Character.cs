@@ -147,11 +147,18 @@ public class Character : MonoBehaviour
         mainCollider.enabled = false;
 
         // Make sure camera is focused on this character
-        cameraController.SetActiveCharacter(this);
-        cameraController.SetTarget(transform);
+        if(other.IsCharacterActive())
+            StartCoroutine(other.Swap());
+        else if(!IsCharacterActive())
+        {
+            cameraController.SetActiveCharacter(this);
+            cameraController.SetTarget(transform);
+        }
 
         // Ground character
         SetMovementState(MovementState.Grounded);
+
+        yield return null;
 
         while(!isGrounded)
             yield return null;
@@ -187,11 +194,26 @@ public class Character : MonoBehaviour
 
     public bool IsDead() => isDead;
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        // Ground Check
+        if(isDead)
+        {
+            if(other.gameObject.layer == LayerMask.NameToLayer("Ground"))
+                isGrounded = true;
+        }
+        else
+        {
+            if(!other.isTrigger)
+                isGrounded = true;
+        }
+    }
+
     private void OnTriggerStay2D(Collider2D other)
     {
         // Ground Check
-        if(!other.isTrigger)
-            isGrounded = true;
+        if(isDead && other.gameObject.layer != LayerMask.NameToLayer("Ground"))
+            isGrounded = false;
     }
 
     private void OnTriggerExit2D(Collider2D other)
