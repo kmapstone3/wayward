@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Tile Sprite Atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 4fb89c79d980aa9419676bfd163613a2, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: -1340027974, guid: 4fb89c79d980aa9419676bfd163613a2, type: 3}
+  - {fileID: 638507851, guid: 4fb89c79d980aa9419676bfd163613a2, type: 3}
+  - {fileID: -1792543824, guid: 4fb89c79d980aa9419676bfd163613a2, type: 3}
+  - {fileID: 37033422, guid: 4fb89c79d980aa9419676bfd163613a2, type: 3}
+  - {fileID: -170672471, guid: 4fb89c79d980aa9419676bfd163613a2, type: 3}
+  - {fileID: 1518055849, guid: 4fb89c79d980aa9419676bfd163613a2, type: 3}
+  - {fileID: -2052542471, guid: 4fb89c79d980aa9419676bfd163613a2, type: 3}
+  - {fileID: -678804618, guid: 4fb89c79d980aa9419676bfd163613a2, type: 3}
+  - {fileID: -715161933, guid: 4fb89c79d980aa9419676bfd163613a2, type: 3}
+  - {fileID: 279183342, guid: 4fb89c79d980aa9419676bfd163613a2, type: 3}
+  - {fileID: 557962909, guid: 4fb89c79d980aa9419676bfd163613a2, type: 3}
+  - {fileID: 1752797567, guid: 4fb89c79d980aa9419676bfd163613a2, type: 3}
+  - {fileID: 1794063094, guid: 4fb89c79d980aa9419676bfd163613a2, type: 3}
+  - {fileID: 895207449, guid: 4fb89c79d980aa9419676bfd163613a2, type: 3}
+  - {fileID: 929300278, guid: 4fb89c79d980aa9419676bfd163613a2, type: 3}
+  - {fileID: -911056040, guid: 4fb89c79d980aa9419676bfd163613a2, type: 3}
+  - {fileID: -306984431, guid: 4fb89c79d980aa9419676bfd163613a2, type: 3}
+  - {fileID: -308070155, guid: 4fb89c79d980aa9419676bfd163613a2, type: 3}
+  - {fileID: 28351777, guid: 4fb89c79d980aa9419676bfd163613a2, type: 3}
+  - {fileID: 1456131959, guid: 4fb89c79d980aa9419676bfd163613a2, type: 3}
+  - {fileID: 1202755314, guid: 4fb89c79d980aa9419676bfd163613a2, type: 3}
+  - {fileID: 1359356933, guid: 4fb89c79d980aa9419676bfd163613a2, type: 3}
+  - {fileID: -1746621015, guid: 4fb89c79d980aa9419676bfd163613a2, type: 3}
+  - {fileID: -327225193, guid: 4fb89c79d980aa9419676bfd163613a2, type: 3}
+  - {fileID: -11709819, guid: 4fb89c79d980aa9419676bfd163613a2, type: 3}
+  - {fileID: 1976789348, guid: 4fb89c79d980aa9419676bfd163613a2, type: 3}
+  - {fileID: 1444761163, guid: 4fb89c79d980aa9419676bfd163613a2, type: 3}
+  - {fileID: 55494873, guid: 4fb89c79d980aa9419676bfd163613a2, type: 3}
+  - {fileID: 2053658940, guid: 4fb89c79d980aa9419676bfd163613a2, type: 3}
+  - {fileID: 143437889, guid: 4fb89c79d980aa9419676bfd163613a2, type: 3}
+  - {fileID: -1413405498, guid: 4fb89c79d980aa9419676bfd163613a2, type: 3}
+  - {fileID: -1083304094, guid: 4fb89c79d980aa9419676bfd163613a2, type: 3}
+  - {fileID: 1018551978, guid: 4fb89c79d980aa9419676bfd163613a2, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - GroundTiles_21
+  - GroundTiles_26
+  - GroundTiles_27
+  - GroundTiles_24
+  - GroundTiles_25
+  - GroundTiles_31
+  - GroundTiles_30
+  - GroundTiles_32
+  - GroundTiles_17
+  - GroundTiles_16
+  - GroundTiles_15
+  - GroundTiles_14
+  - GroundTiles_13
+  - GroundTiles_12
+  - GroundTiles_11
+  - GroundTiles_10
+  - GroundTiles_19
+  - GroundTiles_18
+  - GroundTiles_8
+  - GroundTiles_9
+  - GroundTiles_4
+  - GroundTiles_5
+  - GroundTiles_6
+  - GroundTiles_7
+  - GroundTiles_0
+  - GroundTiles_1
+  - GroundTiles_2
+  - GroundTiles_3
+  - GroundTiles_28
+  - GroundTiles_29
+  - GroundTiles_22
+  - GroundTiles_23
+  - GroundTiles_20
+  m_RenderDataMap: {}
+  m_Tag: Tile Sprite Atlas
+  m_IsVariant: 0
