@@ -38,6 +38,9 @@ public class CameraController : MonoBehaviour
         if(target == null)
             return;
 
+        //if(Vector2.Distance(transform.position, target.position) < 0.5f)
+            //return;
+
         Vector2 delta = (target.position - transform.position) * cameraSpeed * Time.deltaTime;
         transform.position += (Vector3) delta;
     }
