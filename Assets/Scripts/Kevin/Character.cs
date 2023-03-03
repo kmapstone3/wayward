@@ -68,7 +68,6 @@ public class Character : MonoBehaviour
         isMoving = false;
 
         // Jump
-        Debug.Log(CanJump());
         if(Input.GetKeyDown(KeyCode.Space) && CanJump())
             Jump();
 
