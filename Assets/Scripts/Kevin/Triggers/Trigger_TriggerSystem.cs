@@ -26,7 +26,6 @@ public class Trigger_TriggerSystem : Trigger
                 return;
         }
 
-        Debug.Log("k");
         Activate();
     }
 

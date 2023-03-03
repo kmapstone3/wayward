@@ -39,6 +39,8 @@ public class Character : MonoBehaviour
 
     protected Transform followTransform = null;
 
+    private bool collidingInCurrentDirection = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -62,10 +64,12 @@ public class Character : MonoBehaviour
 
     public virtual void TestInput()
     {
+        Debug.Log(collidingInCurrentDirection);
         //defaults
         isMoving = false;
 
         // Jump
+        Debug.Log(CanJump());
         if(Input.GetKeyDown(KeyCode.Space) && CanJump())
             Jump();
 
@@ -93,6 +97,10 @@ public class Character : MonoBehaviour
     public virtual void Move(Vector2 dir)
     {
         if(dir == Vector2.zero)
+            return;
+
+        // If facing in direction of movement and colliding in current direction, return
+        if(dir.x > 0 == transform.localScale.x > 0 && collidingInCurrentDirection)
             return;
 
         isMoving = true;
@@ -186,6 +194,11 @@ public class Character : MonoBehaviour
     public void SetFollow(Transform target)
     {
         followTransform = target;
+    }
+
+    public void SetCollidingInCurrentDirection(bool value)
+    {
+        collidingInCurrentDirection = value;
     }
 
     protected virtual bool CanJump() => isGrounded;
