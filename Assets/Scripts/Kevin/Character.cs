@@ -64,7 +64,6 @@ public class Character : MonoBehaviour
 
     public virtual void TestInput()
     {
-        Debug.Log(collidingInCurrentDirection);
         //defaults
         isMoving = false;
 

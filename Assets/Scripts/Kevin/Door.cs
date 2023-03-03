@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Door : MonoBehaviour
 {
     //Audio
-    public  AudioSource audioSorce;
+    public  AudioSource audioSource;
 
     public Animator anim;
 
@@ -24,7 +24,7 @@ public class Door : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audioSorce = GetComponent<AudioSource>();
+        
     }
 
     // Update is called once per frame
@@ -55,7 +55,7 @@ public class Door : MonoBehaviour
 
         // Open Door
         anim.SetTrigger("Open");
-        audioSorce.Play();
+        audioSource.Play();
 
         // Wait for animation to finish
         yield return new WaitForSeconds(openAnimationDuration);

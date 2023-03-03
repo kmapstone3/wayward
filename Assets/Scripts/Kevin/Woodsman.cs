@@ -23,8 +23,6 @@ public class Woodsman : Character
     protected override void Update()
     {
         base.Update();
-
-        if (Input.GetKeyDown("space"));
     }
 
     public override void TestInput()
