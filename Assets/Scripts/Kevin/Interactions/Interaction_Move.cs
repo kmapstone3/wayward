@@ -90,9 +90,9 @@ public class Interaction_Move : Interaction
         hazardObject.gameObject.SetActive(true);
 
         float startTime = Time.time;
-        while (Time.time < startTime + duration)
+        while(Time.time < startTime + duration)
         {
-            if (colliding)
+            if(colliding)
                 break;
 
             Vector3 delta = (Vector3)(dir * speed * Time.deltaTime);

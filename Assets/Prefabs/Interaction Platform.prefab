@@ -159,6 +159,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  onTriggerStay:
+    m_PersistentCalls:
+      m_Calls: []
   onTriggerExit:
     m_PersistentCalls:
       m_Calls:
@@ -409,8 +412,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1320a2571b7fd3e4d8d26a6ace92bfde, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 8456a85dbf2f2394a899904bc284a694, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2509804}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -480,7 +483,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 0.5
-  collisionType: 0
   rb: {fileID: 8205638728960888030}
   directionTransform: {fileID: 8205638728449876147}
   hazardObject: {fileID: 6129416056952195703}

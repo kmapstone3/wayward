@@ -6,8 +6,6 @@ public abstract class Interaction : MonoBehaviour
 {
     public float duration;
 
-    public bool collisionType;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -21,4 +19,12 @@ public abstract class Interaction : MonoBehaviour
     }
 
     public abstract IEnumerator OnInteract();
+
+    protected IEnumerator WaitForDuration()
+    {
+        if(duration <= 0)
+            yield break;
+
+        yield return new WaitForSeconds(duration);
+    }
 }
