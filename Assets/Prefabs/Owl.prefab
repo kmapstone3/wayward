@@ -201,10 +201,9 @@ MonoBehaviour:
   mainCollider: {fileID: 362970020565134875}
   cameraController: {fileID: 0}
   other: {fileID: 0}
-  moveSpeed: 3
+  moveSpeed: 4
   jumpSpeed: 5
   deathAnimationDuration: 2
-  landingAudio: {fileID: 1098782478170051914}
 --- !u!82 &5711808085606608835
 AudioSource:
   m_ObjectHideFlags: 0

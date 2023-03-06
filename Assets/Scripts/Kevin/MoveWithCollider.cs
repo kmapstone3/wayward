@@ -35,7 +35,10 @@ public class MoveWithCollider : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         if(other.collider.CompareTag("Player"))
+        {
             other.transform.SetParent(transform);
+            other.collider.attachedRigidbody.velocity = Vector2.zero;
+        }
 
         //if(other.collider.CompareTag("Player")) //other.gameObject.layer != LayerMask.NameToLayer("Ground")
         //    connectedColliders.Add(other.collider);
