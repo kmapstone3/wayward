@@ -20,6 +20,8 @@ public class MoveWithCollider : MonoBehaviour
 
     public void MoveConnectedColliders(Vector2 delta)
     {
+        return;
+
         foreach(Collider2D collider in connectedColliders)
             collider.transform.position += (Vector3)delta;
     }
@@ -32,17 +34,23 @@ public class MoveWithCollider : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.collider.CompareTag("Player")) //other.gameObject.layer != LayerMask.NameToLayer("Ground")
-            connectedColliders.Add(other.collider);
+        if(other.collider.CompareTag("Player"))
+            other.transform.SetParent(transform);
+
+        //if(other.collider.CompareTag("Player")) //other.gameObject.layer != LayerMask.NameToLayer("Ground")
+        //    connectedColliders.Add(other.collider);
     }
 
     private void OnCollisionExit2D(Collision2D other)
     {
         if(other.gameObject.layer != LayerMask.NameToLayer("Ground"))
-        {
-            Debug.Log(other.collider.name);
-            connectedColliders.Remove(other.collider);
-            other.collider.attachedRigidbody.velocity = new Vector2(0, other.collider.attachedRigidbody.velocity.y);
-        }
+            other.transform.SetParent(null);
+
+        //if(other.gameObject.layer != LayerMask.NameToLayer("Ground"))
+        //{
+        //    Debug.Log(other.collider.name);
+        //    connectedColliders.Remove(other.collider);
+        //    other.collider.attachedRigidbody.velocity = new Vector2(0, other.collider.attachedRigidbody.velocity.y);
+        //}
     }
 }
