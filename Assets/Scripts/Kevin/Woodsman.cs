@@ -29,8 +29,8 @@ public class Woodsman : Character
     {
         base.TestInput();
 
-        // Press E while within 3 units of Owl to CallOwl
-        if(Input.GetKeyDown(KeyCode.E) && Vector2.Distance(transform.position, other.transform.position) < 3.0f)
+        // Press [Call Owl] while within 3 units of Owl to CallOwl
+        if(Input.GetButtonDown("Call Owl") && Vector2.Distance(transform.position, other.transform.position) < 3.0f)
             CallOwl();
 
         Move(new Vector2(Input.GetAxis("Horizontal"), 0));
