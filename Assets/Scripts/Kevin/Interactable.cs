@@ -28,11 +28,11 @@ public class Interactable : MonoBehaviour
         if(!isActive)
             return;
 
-        CheckForMouse();
+        //CheckForMouse();
 
         // Left click when highlighted to interact
         if(isHighlighted && Input.GetMouseButtonDown(0))
-            StartCoroutine(OnInteract());
+            StartCoroutine(OnInteractCo());
     }
 
     public void CheckForMouse()
@@ -66,7 +66,15 @@ public class Interactable : MonoBehaviour
         anim.SetBool("Highlighted", value);
     }
 
-    IEnumerator OnInteract()
+    public void OnInteract()
+    {
+        if(!isActive)
+            return;
+
+        StartCoroutine(OnInteractCo());
+    }
+
+    IEnumerator OnInteractCo()
     {
         isActive = false;
 

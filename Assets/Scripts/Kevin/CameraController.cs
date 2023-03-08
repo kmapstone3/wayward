@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    public Transform parallaxBG;
+    public Transform parallaxBGFar;
+
     public float cameraSpeed;
 
     [SerializeField] private Transform target;
@@ -43,6 +46,9 @@ public class CameraController : MonoBehaviour
 
         Vector2 delta = (target.position - transform.position) * cameraSpeed * Time.deltaTime;
         transform.position += (Vector3) delta;
+
+        //parallaxBG.position -= (Vector3) (delta * Vector3.right) * 0.1f;
+        parallaxBGFar.position -= (Vector3) delta * 0.05f;
     }
 
     public Character GetActiveCharacter() => activeCharacter;

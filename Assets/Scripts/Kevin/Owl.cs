@@ -43,12 +43,12 @@ public class Owl : Character
 
         Move(dir);
 
-        // If you press Space while airborne, stop flying
-        if(Input.GetKeyDown(KeyCode.Space) && movementState == MovementState.Flying)
+        // If you Jump while airborne, stop flying
+        if(Input.GetButtonDown("Jump") && movementState == MovementState.Flying)
             SetMovementState(MovementState.Grounded);
 
-        // If you press W while airborne, start flying
-        if(Input.GetKeyDown(KeyCode.W) && !isGrounded)
+        // If you press Up while airborne, start flying
+        if(Input.GetAxis("Vertical") > 0.75f && !isGrounded)
             SetMovementState(MovementState.Flying);
     }
 

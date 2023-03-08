@@ -28,7 +28,9 @@ public class Interaction_Path : Interaction
     public override IEnumerator OnInteract()
     {
         Debug.Log("INTERACTION PATH");
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, distance, layerMask);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, distance, layerMask);
+        //if(hit.collider != null)
+            Debug.Log(transform.position + " " + hit.point + " " + hit.distance);
         if(hit.collider != null && hit.collider.GetComponent<Interaction_Path>() != null)
             Debug.Log("Hit Next");
 

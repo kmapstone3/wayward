@@ -38,6 +38,8 @@ public class Character : MonoBehaviour
     protected bool isDead = false;
 
     protected Transform followTransform = null;
+    protected List<Interactable> nearbyInteractables = new List<Interactable>();
+    protected Interactable closestInteractable = null;
 
     private bool collidingInCurrentDirection = false;
 
@@ -68,15 +70,19 @@ public class Character : MonoBehaviour
         isMoving = false;
 
         // Jump
-        if(Input.GetKeyDown(KeyCode.Space) && CanJump())
+        if(Input.GetButtonDown("Jump") && CanJump())
             Jump();
 
+        // Interact
+        if(Input.GetButtonDown("Interact") && closestInteractable != null)
+            closestInteractable.OnInteract();
+
         // Swap Characters
-        if(Input.GetKeyDown(KeyCode.Q))
+        if(Input.GetButtonDown("Swap"))
             StartCoroutine(Swap());
 
         // Force-Death
-        if(Input.GetKeyDown(KeyCode.R))
+        if(Input.GetButtonDown("Reset"))
             StartCoroutine(DieCo());
     }
 
@@ -218,13 +224,37 @@ public class Character : MonoBehaviour
             if(!other.isTrigger)
                 isGrounded = true;
         }
+
+        // Interactables
+        Interactable interactable = other.GetComponent<Interactable>();
+        if(interactable != null)
+            nearbyInteractables.Add(interactable);
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
         // Ground Check
-        if(isDead && other.gameObject.layer != LayerMask.NameToLayer("Ground"))
-            isGrounded = false;
+        if(isDead)
+        {
+            if(other.gameObject.layer != LayerMask.NameToLayer("Ground"))
+                isGrounded = false;
+        }
+        else
+        {
+            if(!other.isTrigger)
+                isGrounded = true;
+        }
+
+        // Interactables
+        Interactable interactable = other.GetComponent<Interactable>();
+        if(interactable != null)
+        {
+            // If Interactable is closer than closestInteractable, set interactable as the closest
+            if(closestInteractable == null 
+                || Vector2.Distance(transform.position, interactable.transform.position)
+                < Vector2.Distance(transform.position, closestInteractable.transform.position))
+                closestInteractable = interactable;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -232,5 +262,15 @@ public class Character : MonoBehaviour
         // Ground Check
         if(!other.isTrigger)
             isGrounded = false;
+
+        // Interactables
+        Interactable interactable = other.GetComponent<Interactable>();
+        if(interactable != null)
+        {
+            if(closestInteractable == interactable)
+                closestInteractable = null;
+
+            nearbyInteractables.Remove(interactable);
+        }
     }
 }
