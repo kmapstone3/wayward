@@ -48,7 +48,7 @@ public class Owl : Character
             SetMovementState(MovementState.Grounded);
 
         // If you press Up while airborne, start flying
-        if(Input.GetAxis("Vertical") > 0.75f && !isGrounded)
+        if(Input.GetAxis("Vertical") > 0.5f && !isGrounded)
             SetMovementState(MovementState.Flying);
     }
 
