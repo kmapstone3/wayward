@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Rune-Mannaz
+  m_Controller: {fileID: 9100000, guid: bc23ca2e5e5c4bd4286ee69c076941e3, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: d61e2969ec0ee964d9c44a5c641fa67e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a3b39f96f99bdc6468546752b70fc77f, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 4dee11923fdae6f418aeed1ddd7038ba, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b9453382eacc91641b00909e9dc3f46b, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 2fea9aeba4b503b4c919f89e9528cb1f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: bd750a7b67eaa1943b39f2fcbc4da2ac, type: 2}

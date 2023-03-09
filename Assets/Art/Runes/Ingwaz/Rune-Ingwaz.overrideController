@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Rune-Ingwaz
+  m_Controller: {fileID: 9100000, guid: bc23ca2e5e5c4bd4286ee69c076941e3, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: d61e2969ec0ee964d9c44a5c641fa67e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 9a00c682d443f5242811d29243b88d62, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 4dee11923fdae6f418aeed1ddd7038ba, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 52e8746a7bfa94449b4a474e6032d5e7, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 2fea9aeba4b503b4c919f89e9528cb1f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e91b32ff9c8e78b4f962503606469121, type: 2}

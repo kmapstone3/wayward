@@ -227,7 +227,7 @@ public class Character : MonoBehaviour
 
         // Interactables
         Interactable interactable = other.GetComponent<Interactable>();
-        if(interactable != null)
+        if(interactable != null && !nearbyInteractables.Contains(interactable))
             nearbyInteractables.Add(interactable);
     }
 
@@ -253,7 +253,13 @@ public class Character : MonoBehaviour
             if(closestInteractable == null 
                 || Vector2.Distance(transform.position, interactable.transform.position)
                 < Vector2.Distance(transform.position, closestInteractable.transform.position))
+            {
+                if(closestInteractable != null)
+                    closestInteractable.SetHighlighted(false);
+
                 closestInteractable = interactable;
+                interactable.SetHighlighted(true);
+            }
         }
     }
 
@@ -268,7 +274,10 @@ public class Character : MonoBehaviour
         if(interactable != null)
         {
             if(closestInteractable == interactable)
+            {
                 closestInteractable = null;
+                interactable.SetHighlighted(false);
+            }
 
             nearbyInteractables.Remove(interactable);
         }

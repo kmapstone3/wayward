@@ -11,6 +11,7 @@ public class Interactable : MonoBehaviour
     public CharacterType characterType;
 
     public Interaction action;
+    public List<Interaction> actions;
 
     [SerializeField] protected bool isActive;
     protected bool isCharacterNearby = false;
@@ -25,14 +26,15 @@ public class Interactable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!isActive)
-            return;
+        //if(!isActive)
+            //return;
 
         //CheckForMouse();
 
         // Left click when highlighted to interact
-        if(isHighlighted && Input.GetMouseButtonDown(0))
-            StartCoroutine(OnInteractCo());
+        //if(isHighlighted && Input.GetMouseButtonDown(0))
+            //
+            //StartCoroutine(OnInteractCo());
     }
 
     public void CheckForMouse()
@@ -51,19 +53,30 @@ public class Interactable : MonoBehaviour
             SetHighlighted(highlighted);
     }
 
+    public void SetActive(bool value)
+    {
+        isActive = value;
+
+        anim.SetBool("In Range", value && isCharacterNearby && isHighlighted);
+    }
+
     void SetIsCharacterNearby(bool value)
     {
         isCharacterNearby = value;
 
-        anim.SetBool("In Range", value);
+        anim.SetBool("In Range", value && isHighlighted && isActive);
     }
 
     // Called when switching between highlighted states
-    void SetHighlighted(bool value)
+    public void SetHighlighted(bool value)
     {
+        // Don't highlight if not active
+        if(value && !isActive)
+            return;
+
         isHighlighted = value;
 
-        anim.SetBool("Highlighted", value);
+        anim.SetBool("In Range", value && isCharacterNearby && isActive);
     }
 
     public void OnInteract()
@@ -80,8 +93,9 @@ public class Interactable : MonoBehaviour
 
         anim.SetTrigger("Interact");
 
-        // Wait for interaction to finish
-        yield return action.OnInteract();
+        foreach(Interaction action in actions)
+            // Wait for interaction to finish
+            yield return action.OnInteract();
 
         isActive = true;
     }

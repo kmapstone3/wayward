@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 public class Interaction_Path : Interaction
@@ -9,12 +10,16 @@ public class Interaction_Path : Interaction
     public Vector2 dir;
     public float distance;
 
-    public Interaction_Path next;
+    public Interactable interactable;
+    public Trigger_Script trigger;
 
+    public SpriteRenderer activeFill;
     public LineRenderer line;
 
     public Transform originTransform;
     public Transform receivingTransform;
+
+    private bool connected = false;
 
     // Start is called before the first frame update
     void Start()
@@ -31,21 +36,64 @@ public class Interaction_Path : Interaction
     // Called by Interactable or when receiving raycast
     public override IEnumerator OnInteract()
     {
-        // Set active
+        if(connected)
+            yield break;
 
-        Debug.Log("INTERACTION PATH");
+        // Raycast
         RaycastHit2D hit = Physics2D.Raycast(originTransform.position, dir, distance, layerMask);
-        if(hit.collider != null && hit.collider.GetComponent<Interaction_Path>() != null)
-            ActivateNext(hit.collider.GetComponent<Interaction_Path>());
+        bool success = hit.collider != null && hit.transform.parent.GetComponent<Interaction_Path>() != null;
+        connected = success;
 
-        Debug.Log(transform.position + "," + hit.point);
-        line.SetPositions(new Vector3[] { originTransform.position, hit.point });
+        yield return ProjectLine(hit.point, success);
+
+        if(success)
+        {
+            hit.transform.parent.GetComponent<Interaction_Path>().Activate();
+            interactable.SetActive(false);
+        }
 
         yield return null;
     }
 
-    void ActivateNext(Interaction_Path next)
+    IEnumerator ProjectLine(Vector2 targetPos, bool success)
     {
+        line.SetPositions(new Vector3[] { originTransform.position, originTransform.position });
 
+        while(Vector2.Distance(line.GetPosition(1), targetPos) > 0.1f)
+        {
+            line.SetPositions(new Vector3[] { originTransform.position, (Vector2) line.GetPosition(1) + dir.normalized * 0.02f });
+            
+            yield return null;
+        }
+
+        line.SetPositions(new Vector3[] { originTransform.position, targetPos });
+
+        if(!success)
+        {
+            while(line.endColor.a > 0)
+            {
+                line.startColor -= new Color(0, 0, 0, 0.01f);
+                line.endColor -= new Color(0, 0, 0, 0.01f);
+
+                yield return null;
+            }
+
+            line.SetPositions(new Vector3[] { originTransform.position, originTransform.position });
+            line.startColor += new Color(0, 0, 0, 1);
+            line.endColor += new Color(0, 0, 0, 1);
+        }
+
+        yield return null;
+    }
+
+    public void Activate()
+    {
+        activeFill.gameObject.SetActive(true);
+
+        if(interactable != null)
+            interactable.SetActive(true);
+
+        if(trigger != null)
+            trigger.Activate();
     }
 }

@@ -114,7 +114,7 @@ public class Interaction_Move : Interaction
 
         for(int i = 0; i < Mathf.Abs(angleDelta); i++)
         {
-            directionTransform.eulerAngles += new Vector3(0, 0, -1 * directionRotation);
+            directionTransform.eulerAngles += new Vector3(0, 0, -1 * Utils.Polarize(directionRotation));
 
             yield return null;
         }

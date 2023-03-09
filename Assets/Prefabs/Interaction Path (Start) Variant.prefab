@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4245176085778139347, guid: 126f64a640aa2d64aa58648f441ec872, type: 3}
+      propertyPath: isActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 299430438331133590, guid: 126f64a640aa2d64aa58648f441ec872, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1200456075029957488, guid: 126f64a640aa2d64aa58648f441ec872, type: 3}
       propertyPath: receivingTransform
       value: 
@@ -65,41 +73,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 126f64a640aa2d64aa58648f441ec872, type: 3}
---- !u!114 &2395821228447716537 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1200456075029957488, guid: 126f64a640aa2d64aa58648f441ec872, type: 3}
-  m_PrefabInstance: {fileID: 3573407043914670025}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2395821228447716539}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1e4b32d9d42d5a4b9c044e77b159e69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &2395821228447716539 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1200456075029957490, guid: 126f64a640aa2d64aa58648f441ec872, type: 3}
-  m_PrefabInstance: {fileID: 3573407043914670025}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &-307440203445091257
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2395821228447716539}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dcb8b133eeedbf4eb440d6b1805cc42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 2395821228447716541}
-  interactionArea: {fileID: 0}
-  characterType: 1
-  action: {fileID: 2395821228447716537}
-  isActive: 1
---- !u!95 &2395821228447716541 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1200456075029957492, guid: 126f64a640aa2d64aa58648f441ec872, type: 3}
-  m_PrefabInstance: {fileID: 3573407043914670025}
-  m_PrefabAsset: {fileID: 0}
