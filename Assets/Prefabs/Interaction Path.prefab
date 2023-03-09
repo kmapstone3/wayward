@@ -383,6 +383,8 @@ MonoBehaviour:
   interactionArea: {fileID: 0}
   characterType: 1
   action: {fileID: 1200456075029957488}
+  actions:
+  - {fileID: 1200456075029957488}
   isActive: 0
 --- !u!1 &2050532886713872201
 GameObject:

@@ -21,6 +21,8 @@ public class Interaction_Path : Interaction
 
     private bool connected = false;
 
+    private Interaction_Path next = null;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +32,15 @@ public class Interaction_Path : Interaction
     // Update is called once per frame
     void Update()
     {
-        
+        if(connected)
+        {
+            RaycastHit2D hit = Physics2D.Raycast(originTransform.position, dir, distance, layerMask);
+            bool success = IsHitSuccess(hit);
+            connected = success;
+
+            if(!success)
+                StartCoroutine(BreakLine());
+        }
     }
 
     // Called by Interactable or when receiving raycast
@@ -41,14 +51,15 @@ public class Interaction_Path : Interaction
 
         // Raycast
         RaycastHit2D hit = Physics2D.Raycast(originTransform.position, dir, distance, layerMask);
-        bool success = hit.collider != null && hit.transform.parent.GetComponent<Interaction_Path>() != null;
+        bool success = IsHitSuccess(hit);
         connected = success;
 
         yield return ProjectLine(hit.point, success);
 
         if(success)
         {
-            hit.transform.parent.GetComponent<Interaction_Path>().Activate();
+            next = hit.transform.parent.GetComponent<Interaction_Path>();
+            next.Activate();
             interactable.SetActive(false);
         }
 
@@ -69,21 +80,29 @@ public class Interaction_Path : Interaction
         line.SetPositions(new Vector3[] { originTransform.position, targetPos });
 
         if(!success)
-        {
-            while(line.endColor.a > 0)
-            {
-                line.startColor -= new Color(0, 0, 0, 0.01f);
-                line.endColor -= new Color(0, 0, 0, 0.01f);
-
-                yield return null;
-            }
-
-            line.SetPositions(new Vector3[] { originTransform.position, originTransform.position });
-            line.startColor += new Color(0, 0, 0, 1);
-            line.endColor += new Color(0, 0, 0, 1);
-        }
+            yield return BreakLine();
 
         yield return null;
+    }
+
+    IEnumerator BreakLine()
+    {
+        connected = false;
+
+        if(next != null)
+            next.Deactivate();
+
+        while(line.endColor.a > 0)
+        {
+            line.startColor -= new Color(0, 0, 0, 0.01f);
+            line.endColor -= new Color(0, 0, 0, 0.01f);
+
+            yield return null;
+        }
+
+        line.SetPositions(new Vector3[] { originTransform.position, originTransform.position });
+        line.startColor += new Color(0, 0, 0, 1);
+        line.endColor += new Color(0, 0, 0, 1);
     }
 
     public void Activate()
@@ -96,4 +115,20 @@ public class Interaction_Path : Interaction
         if(trigger != null)
             trigger.Activate();
     }
+
+    public void Deactivate()
+    {
+        activeFill.gameObject.SetActive(false);
+
+        if(interactable != null)
+            interactable.SetActive(false);
+
+        if(trigger != null)
+            trigger.Deactivate();
+
+        StartCoroutine(BreakLine());
+    }
+
+    bool IsHitSuccess(RaycastHit2D hit) => 
+        hit.collider != null && hit.transform.parent != null && hit.transform.parent.GetComponent<Interaction_Path>() != null;
 }
