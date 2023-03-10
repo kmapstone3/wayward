@@ -53,6 +53,8 @@ public class CameraController : MonoBehaviour
 
     public Character GetActiveCharacter() => activeCharacter;
 
+    public Transform GetTarget() => target;
+
     public void SetActiveCharacter(Character character)
     {
         activeCharacter = character;

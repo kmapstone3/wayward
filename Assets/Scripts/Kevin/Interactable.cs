@@ -94,8 +94,21 @@ public class Interactable : MonoBehaviour
         anim.SetTrigger("Interact");
 
         foreach(Interaction action in actions)
+        {
+            //CameraController cam = FindObjectOfType<CameraController>();
+
+            //Character activeCharacter = cam.GetActiveCharacter();
+            //Transform target = cam.GetTarget();
+
+            //activeCharacter.ReleaseCameraControl();
+            //cam.SetTarget(action.transform);
+
             // Wait for interaction to finish
             yield return action.OnInteract();
+
+            //cam.SetActiveCharacter(activeCharacter);
+            //cam.SetTarget(target);
+        }
 
         isActive = true;
     }

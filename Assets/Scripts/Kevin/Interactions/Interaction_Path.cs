@@ -94,8 +94,8 @@ public class Interaction_Path : Interaction
 
         while(line.endColor.a > 0)
         {
-            line.startColor -= new Color(0, 0, 0, 0.01f);
-            line.endColor -= new Color(0, 0, 0, 0.01f);
+            line.startColor -= new Color(0, 0, 0, 0.005f);
+            line.endColor -= new Color(0, 0, 0, 0.005f);
 
             yield return null;
         }
