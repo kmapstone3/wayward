@@ -23,21 +23,25 @@ public class Trigger_TriggerSystem : Trigger
         for(int i = 0; i < slots.Length; i++)
         {
             if(!slots[i])
+            {
+                if(isActivated)
+                    Deactivate();
+
                 return;
+            }
         }
 
-        Activate();
+        if(!isActivated)
+            Activate();
     }
 
     public void ActivateSlot(int slot)
     {
-        Debug.Log("Activate " + slot);
         slots[slot] = true;
     }
 
     public void DeactivateSlot(int slot)
     {
-        Debug.Log("Deactivate " + slot);
         slots[slot] = false;
     }
 }

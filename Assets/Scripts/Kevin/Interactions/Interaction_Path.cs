@@ -87,10 +87,16 @@ public class Interaction_Path : Interaction
 
     IEnumerator BreakLine()
     {
+        if(originTransform == null)
+            yield break;
+
         connected = false;
 
         if(next != null)
+        {
             next.Deactivate();
+            next = null;
+        }
 
         while(line.endColor.a > 0)
         {

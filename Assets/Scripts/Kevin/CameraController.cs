@@ -12,6 +12,8 @@ public class CameraController : MonoBehaviour
     [SerializeField] private Transform target;
     [SerializeField] private Character activeCharacter;
 
+    private bool interactionDisabled = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,12 +50,14 @@ public class CameraController : MonoBehaviour
         transform.position += (Vector3) delta;
 
         //parallaxBG.position -= (Vector3) (delta * Vector3.right) * 0.1f;
-        parallaxBGFar.position -= (Vector3) delta * 0.05f;
+        parallaxBGFar.position -= (Vector3) delta * 0.01f;
     }
 
     public Character GetActiveCharacter() => activeCharacter;
 
     public Transform GetTarget() => target;
+
+    public bool IsInteractionEnabled() => !interactionDisabled;
 
     public void SetActiveCharacter(Character character)
     {
@@ -64,4 +68,7 @@ public class CameraController : MonoBehaviour
     {
         this.target = target;
     }
+
+    public void EnableInteraction() => interactionDisabled = false;
+    public void DisableInteraction() => interactionDisabled = true;
 }

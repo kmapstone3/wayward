@@ -186,17 +186,6 @@ public class Character : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void ReleaseCameraControl() => StartCoroutine(ReleaseCameraControlCo());
-
-    IEnumerator ReleaseCameraControlCo()
-    {
-        cameraController.SetActiveCharacter(null);
-
-        yield return null;
-
-        isMoving = false;
-    }
-
     public void SetMovementState(MovementState movementState)
     {
         this.movementState = movementState;

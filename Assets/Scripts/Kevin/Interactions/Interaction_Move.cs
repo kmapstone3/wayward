@@ -95,9 +95,9 @@ public class Interaction_Move : Interaction
             if(colliding)
                 break;
 
-            Vector3 delta = (Vector3)(dir * speed * Time.deltaTime);
+            Vector3 delta = (Vector3) (dir * speed * Time.deltaTime);
             transform.position += delta;
-            if (rideTransform != null)
+            if(rideTransform != null)
                 rideTransform.MoveConnectedColliders(delta);
             yield return null;
         }

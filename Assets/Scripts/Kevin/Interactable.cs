@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class Interactable : MonoBehaviour
 {
@@ -57,14 +58,14 @@ public class Interactable : MonoBehaviour
     {
         isActive = value;
 
-        anim.SetBool("In Range", value && isCharacterNearby && isHighlighted);
+        anim.SetBool("In Range", CanBeUsed());
     }
 
     void SetIsCharacterNearby(bool value)
     {
         isCharacterNearby = value;
 
-        anim.SetBool("In Range", value && isHighlighted && isActive);
+        anim.SetBool("In Range", CanBeUsed());
     }
 
     // Called when switching between highlighted states
@@ -76,12 +77,12 @@ public class Interactable : MonoBehaviour
 
         isHighlighted = value;
 
-        anim.SetBool("In Range", value && isCharacterNearby && isActive);
+        anim.SetBool("In Range", CanBeUsed());
     }
 
     public void OnInteract()
     {
-        if(!isActive)
+        if(!CanBeUsed())
             return;
 
         StartCoroutine(OnInteractCo());
@@ -89,28 +90,34 @@ public class Interactable : MonoBehaviour
 
     IEnumerator OnInteractCo()
     {
-        isActive = false;
+        SetActive(false);
 
         anim.SetTrigger("Interact");
 
+        CameraController cam = FindObjectOfType<CameraController>();
+
+        Character activeCharacter = cam.GetActiveCharacter();
+        Transform target = cam.GetTarget();
+
+        cam.DisableInteraction();
+
         foreach(Interaction action in actions)
         {
-            //CameraController cam = FindObjectOfType<CameraController>();
-
-            //Character activeCharacter = cam.GetActiveCharacter();
-            //Transform target = cam.GetTarget();
-
             //activeCharacter.ReleaseCameraControl();
-            //cam.SetTarget(action.transform);
+            cam.SetTarget(action.transform);
 
             // Wait for interaction to finish
             yield return action.OnInteract();
-
-            //cam.SetActiveCharacter(activeCharacter);
-            //cam.SetTarget(target);
         }
 
-        isActive = true;
+        while(cam.GetActiveCharacter() == null)
+            yield return null;
+
+        //cam.SetActiveCharacter(activeCharacter);
+        cam.SetTarget(cam.GetActiveCharacter().transform);
+        cam.EnableInteraction();
+
+        SetActive(true);
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -124,4 +131,6 @@ public class Interactable : MonoBehaviour
         if(other.CompareTag("Player"))
             SetIsCharacterNearby(false);
     }
+
+    bool CanBeUsed() => isActive && isCharacterNearby && isHighlighted && FindObjectOfType<CameraController>().IsInteractionEnabled();
 }

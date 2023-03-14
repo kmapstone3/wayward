@@ -18,6 +18,7 @@ public class Door : MonoBehaviour
     public float openAnimationDuration;
 
     [SerializeField] private bool isOpen;
+    private bool busy = false;
 
     private List<Character> playersInRange = new List<Character>();
 
@@ -37,13 +38,19 @@ public class Door : MonoBehaviour
 
     IEnumerator FocusCameraCo(CameraController camera)
     {
-        if(isOpen)
+        if(busy)
             yield break;
 
-        isOpen = true;
+        busy = true;
+
+        //if(isOpen)
+            //yield break;
+
+        //isOpen = true;
 
         // Remember last active character
         Character character = camera.GetActiveCharacter();
+        Debug.Log(character);
 
         // Set Camera Target
         camera.SetTarget(transform);
@@ -54,8 +61,13 @@ public class Door : MonoBehaviour
             yield return null;
 
         // Open Door
-        anim.SetTrigger("Open");
+        if(!isOpen)
+            anim.SetTrigger("Open");
+        else
+            anim.SetTrigger("Close");
         audioSource.Play();
+
+        isOpen = !isOpen;
 
         // Wait for animation to finish
         yield return new WaitForSeconds(openAnimationDuration);
@@ -63,6 +75,8 @@ public class Door : MonoBehaviour
         // Set Camera Target to last active character
         camera.SetTarget(character.transform);
         camera.SetActiveCharacter(character);
+
+        busy = false;
     }
 
     IEnumerator ExitSequence()
