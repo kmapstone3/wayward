@@ -218,7 +218,7 @@ public class Character : MonoBehaviour
         // Ground Check
         if(isDead)
         {
-            if(other.gameObject.layer == LayerMask.NameToLayer("Ground"))
+            if(other.gameObject.layer == LayerMask.NameToLayer("Ground") && !other.isTrigger)
                 isGrounded = true;
         }
         else
@@ -238,7 +238,7 @@ public class Character : MonoBehaviour
         // Ground Check
         if(isDead)
         {
-            if(other.gameObject.layer != LayerMask.NameToLayer("Ground"))
+            if(other.gameObject.layer != LayerMask.NameToLayer("Ground") || other.isTrigger)
                 isGrounded = false;
         }
         else

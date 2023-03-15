@@ -35,7 +35,7 @@ public abstract class Trigger : MonoBehaviour
     public virtual void Activate()
     {
         StartCoroutine(ActivationCo());
-
+        
         onActivate.Invoke();
 
         isActivated = true;
@@ -44,7 +44,7 @@ public abstract class Trigger : MonoBehaviour
     public virtual void Deactivate()
     {
         StartCoroutine(DeactivationCo());
-
+        
         onDeactivate.Invoke();
 
         isActivated = false;
@@ -72,7 +72,7 @@ public abstract class Trigger : MonoBehaviour
     {
         if(activationIndicators == null)
             yield break;
-        Debug.Log(indicatorColors.Count);
+        
         List<Color> dirs = new List<Color>();
         activationIndicators.ForEach(ind => dirs.Add((indicatorColors[activationIndicators.IndexOf(ind)] - ind.color) / 10.0f));
 

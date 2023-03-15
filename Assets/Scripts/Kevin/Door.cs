@@ -40,25 +40,19 @@ public class Door : MonoBehaviour
     {
         if(busy)
             yield break;
-
+        
         busy = true;
 
-        //if(isOpen)
-            //yield break;
+        camera.DisableInteraction();
 
-        //isOpen = true;
+        yield return new WaitForSeconds(1.0f);
 
         // Remember last active character
         Character character = camera.GetActiveCharacter();
 
         // Set Camera Target
         camera.SetTarget(transform);
-        //camera.SetActiveCharacter(null);
-
-        // Wait for camera to focus
-        while(Vector2.Distance(transform.position, camera.transform.position) > 0.2f)
-            yield return null;
-
+        
         // Open Door
         if(!isOpen)
             anim.SetTrigger("Open");
@@ -73,7 +67,8 @@ public class Door : MonoBehaviour
 
         // Set Camera Target to last active character
         camera.SetTarget(character.transform);
-        //camera.SetActiveCharacter(character);
+
+        camera.EnableInteraction();
 
         busy = false;
     }
