@@ -135,7 +135,6 @@ public class Character : MonoBehaviour
 
     public virtual void Jump()
     {
-        
         // ANIM JUMP
         anim.SetTrigger("Jump");
         isGrounded = false;
@@ -173,7 +172,10 @@ public class Character : MonoBehaviour
         yield return null;
 
         while(!isGrounded)
+        {
+            SetMovementState(MovementState.Grounded);
             yield return null;
+        }
 
         // Disable gravity
         rb.constraints = RigidbodyConstraints2D.FreezeAll;

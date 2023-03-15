@@ -50,7 +50,7 @@ public class CameraController : MonoBehaviour
         transform.position += (Vector3) delta;
 
         //parallaxBG.position -= (Vector3) (delta * Vector3.right) * 0.1f;
-        parallaxBGFar.position -= (Vector3) delta * 0.01f;
+        parallaxBGFar.position -= (Vector3) delta * 0.02f;
     }
 
     public Character GetActiveCharacter() => activeCharacter;

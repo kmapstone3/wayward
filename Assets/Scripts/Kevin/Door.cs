@@ -50,11 +50,10 @@ public class Door : MonoBehaviour
 
         // Remember last active character
         Character character = camera.GetActiveCharacter();
-        Debug.Log(character);
 
         // Set Camera Target
         camera.SetTarget(transform);
-        camera.SetActiveCharacter(null);
+        //camera.SetActiveCharacter(null);
 
         // Wait for camera to focus
         while(Vector2.Distance(transform.position, camera.transform.position) > 0.2f)
@@ -74,7 +73,7 @@ public class Door : MonoBehaviour
 
         // Set Camera Target to last active character
         camera.SetTarget(character.transform);
-        camera.SetActiveCharacter(character);
+        //camera.SetActiveCharacter(character);
 
         busy = false;
     }

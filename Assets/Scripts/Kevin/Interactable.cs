@@ -14,6 +14,8 @@ public class Interactable : MonoBehaviour
     public Interaction action;
     public List<Interaction> actions;
 
+    public AudioSource activationAudio;
+
     [SerializeField] protected bool isActive;
     protected bool isCharacterNearby = false;
     protected bool isHighlighted = false;
@@ -93,6 +95,7 @@ public class Interactable : MonoBehaviour
         SetActive(false);
 
         anim.SetTrigger("Interact");
+        activationAudio.Play();
 
         CameraController cam = FindObjectOfType<CameraController>();
 
