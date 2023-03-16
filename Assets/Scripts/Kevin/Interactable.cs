@@ -40,21 +40,21 @@ public class Interactable : MonoBehaviour
             //StartCoroutine(OnInteractCo());
     }
 
-    public void CheckForMouse()
-    {
-        if(!isCharacterNearby)
-        {
-            isHighlighted = false;
-            return;
-        }
+    //public void CheckForMouse()
+    //{
+    //    if(!isCharacterNearby)
+    //    {
+    //        isHighlighted = false;
+    //        return;
+    //    }
 
-        Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    //    Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        // Update highlighted status based on whether mouse is in interactionArea
-        bool highlighted = interactionArea.bounds.Contains(mouseWorldPos);
-        if(highlighted != isHighlighted)
-            SetHighlighted(highlighted);
-    }
+    //    // Update highlighted status based on whether mouse is in interactionArea
+    //    bool highlighted = interactionArea.bounds.Contains(mouseWorldPos);
+    //    if(highlighted != isHighlighted)
+    //        SetHighlighted(highlighted);
+    //}
 
     public void SetActive(bool value)
     {
@@ -135,5 +135,5 @@ public class Interactable : MonoBehaviour
             SetIsCharacterNearby(false);
     }
 
-    bool CanBeUsed() => isActive && isCharacterNearby && isHighlighted && FindObjectOfType<CameraController>().IsInteractionEnabled();
+    bool CanBeUsed() => isActive && isHighlighted && FindObjectOfType<CameraController>().IsInteractionEnabled(); // Previously included isCharacterNearby
 }

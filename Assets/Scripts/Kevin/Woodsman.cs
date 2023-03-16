@@ -23,6 +23,8 @@ public class Woodsman : Character
     protected override void Update()
     {
         base.Update();
+
+        Debug.Log(isGrounded);
     }
 
     public override void TestInput()

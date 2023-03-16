@@ -34,7 +34,7 @@ public class Character : MonoBehaviour
     protected MovementState movementState = MovementState.Grounded;
 
     protected bool isMoving = false;
-    protected bool isGrounded;
+    protected bool isGrounded = false;
     protected bool isDead = false;
 
     protected Transform followTransform = null;

@@ -31179,6 +31179,14 @@ PrefabInstance:
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 3614333548536776472, guid: fc79c31551b859b4897bf6773b1171ea, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1390293981}
+    - target: {fileID: 3614333548536776472, guid: fc79c31551b859b4897bf6773b1171ea, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Mute
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc79c31551b859b4897bf6773b1171ea, type: 3}
 --- !u!1 &499524358
@@ -33844,6 +33852,17 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: c0992496d7e34a24cab199febafdf82b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5df870d877a3c84bab058984de969ab, type: 3}
+--- !u!114 &1390293981 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 768681981689391997, guid: d5df870d877a3c84bab058984de969ab, type: 3}
+  m_PrefabInstance: {fileID: 1390293980}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9a543ae76c69d244a76707809a3da4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1413778899
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34126,10 +34145,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Woodsman
       objectReference: {fileID: 0}
-    - target: {fileID: 2255262379106932796, guid: 05efcc92bbec38b4283f19fb4fbe3af7, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: efb0867da475a444c9a3113693dcd5a6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05efcc92bbec38b4283f19fb4fbe3af7, type: 3}
 --- !u!1 &1510112039
