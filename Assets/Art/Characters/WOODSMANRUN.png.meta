@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ad67c70b7aa84a04f84808db5c93fa7b
+guid: 67fde77db2f77544ba003790ef3cc5bc
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 200
+  spritePixelsToUnits: 300
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: OWLIDLEFLY_0
+      name: WOODSMANRUN_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3382dd1cf5fffca4e9aad503a109b2dd
-      internalID: 1773542564
+      spriteID: a758fb78ce1fe5e478beeada0cd6c6a5
+      internalID: 272873101
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: OWLIDLEFLY_1
+      name: WOODSMANRUN_1
       rect:
         serializedVersion: 2
         x: 300
@@ -152,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 482868200cf62cd4e92f9842f25c57ae
-      internalID: -1873507811
+      spriteID: defe7ecadd2c42b49939ecc85c40b14b
+      internalID: 1546545020
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: OWLIDLEFLY_2
+      name: WOODSMANRUN_2
       rect:
         serializedVersion: 2
         x: 600
@@ -173,14 +173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 944d6cc151461b34ebcc4235fd93f07d
-      internalID: 491352409
+      spriteID: 3ecf198cdfca6244fa8d4fa849666601
+      internalID: 1108651373
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: OWLIDLEFLY_3
+      name: WOODSMANRUN_3
       rect:
         serializedVersion: 2
         x: 0
@@ -194,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2e15e777defd8d4989980d6affd7c31
-      internalID: 1852704340
+      spriteID: f46869ca4dbaf7742a6de8e7217e2719
+      internalID: 802584359
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: OWLIDLEFLY_4
+      name: WOODSMANRUN_4
       rect:
         serializedVersion: 2
         x: 300
@@ -215,14 +215,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b4cf3596470bf7468ef470607fffa84
-      internalID: -322480580
+      spriteID: 97def80e864687847939fc784042fa93
+      internalID: -1463771806
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: OWLIDLEFLY_5
+      name: WOODSMANRUN_5
       rect:
         serializedVersion: 2
         x: 600
@@ -236,14 +236,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a045a141d65bfa44807c3e39c7d6e9a
-      internalID: 352988100
+      spriteID: 9140603baf444654cbebb9ddf057ee9f
+      internalID: -1079678644
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: OWLIDLEFLY_6
+      name: WOODSMANRUN_6
       rect:
         serializedVersion: 2
         x: 0
@@ -257,14 +257,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 763d14311f711cf4ea30038a2af51458
-      internalID: -180261666
+      spriteID: d4de3b750c04eb941a95afa09f697539
+      internalID: -1163936547
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: OWLIDLEFLY_7
+      name: WOODSMANRUN_7
       rect:
         serializedVersion: 2
         x: 300
@@ -278,8 +278,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad616fe8df13ecb4ebeb610730fcb58f
-      internalID: 1661007610
+      spriteID: d18842d2db13a54419fdafec32967727
+      internalID: -836854526
       vertices: []
       indices: 
       edges: []
@@ -295,14 +295,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      OWLIDLEFLY_2: 491352409
-      OWLIDLEFLY_7: 1661007610
-      OWLIDLEFLY_5: 352988100
-      OWLIDLEFLY_4: -322480580
-      OWLIDLEFLY_1: -1873507811
-      OWLIDLEFLY_0: 1773542564
-      OWLIDLEFLY_6: -180261666
-      OWLIDLEFLY_3: 1852704340
+      WOODSMANRUN_4: -1463771806
+      WOODSMANRUN_5: -1079678644
+      WOODSMANRUN_3: 802584359
+      WOODSMANRUN_1: 1546545020
+      WOODSMANRUN_7: -836854526
+      WOODSMANRUN_0: 272873101
+      WOODSMANRUN_2: 1108651373
+      WOODSMANRUN_6: -1163936547
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

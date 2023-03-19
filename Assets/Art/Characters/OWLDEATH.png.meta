@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ad67c70b7aa84a04f84808db5c93fa7b
+guid: 909c215251268c241b418b1274ea4f00
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: OWLIDLEFLY_0
+      name: OWLDEATH_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3382dd1cf5fffca4e9aad503a109b2dd
-      internalID: 1773542564
+      spriteID: 127c8ed902a57ed4c910e16e9838e9e8
+      internalID: -576790984
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: OWLIDLEFLY_1
+      name: OWLDEATH_1
       rect:
         serializedVersion: 2
         x: 300
@@ -152,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 482868200cf62cd4e92f9842f25c57ae
-      internalID: -1873507811
+      spriteID: 7b6675b903f06d548824078861101172
+      internalID: -839796259
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: OWLIDLEFLY_2
+      name: OWLDEATH_2
       rect:
         serializedVersion: 2
         x: 600
@@ -173,14 +173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 944d6cc151461b34ebcc4235fd93f07d
-      internalID: 491352409
+      spriteID: 6df322301c351194e81f4e97f8a7f1d9
+      internalID: 183476726
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: OWLIDLEFLY_3
+      name: OWLDEATH_3
       rect:
         serializedVersion: 2
         x: 0
@@ -194,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2e15e777defd8d4989980d6affd7c31
-      internalID: 1852704340
+      spriteID: 5b9ae9246b32e7147a9014881dcd2230
+      internalID: -1591498339
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: OWLIDLEFLY_4
+      name: OWLDEATH_4
       rect:
         serializedVersion: 2
         x: 300
@@ -215,14 +215,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b4cf3596470bf7468ef470607fffa84
-      internalID: -322480580
+      spriteID: 0fdb3ac13b9645a4990a853a6ec36208
+      internalID: -1514560192
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: OWLIDLEFLY_5
+      name: OWLDEATH_5
       rect:
         serializedVersion: 2
         x: 600
@@ -236,14 +236,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a045a141d65bfa44807c3e39c7d6e9a
-      internalID: 352988100
+      spriteID: f42472749c30e0a4bb81c99b68717423
+      internalID: -873911517
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: OWLIDLEFLY_6
+      name: OWLDEATH_6
       rect:
         serializedVersion: 2
         x: 0
@@ -257,14 +257,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 763d14311f711cf4ea30038a2af51458
-      internalID: -180261666
+      spriteID: 275320c96db16f447af386199b23c56b
+      internalID: 597984886
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: OWLIDLEFLY_7
+      name: OWLDEATH_7
       rect:
         serializedVersion: 2
         x: 300
@@ -278,8 +278,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad616fe8df13ecb4ebeb610730fcb58f
-      internalID: 1661007610
+      spriteID: d5152ad2e0f09994d87bc8af174259fe
+      internalID: -1885229185
       vertices: []
       indices: 
       edges: []
@@ -295,14 +295,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      OWLIDLEFLY_2: 491352409
-      OWLIDLEFLY_7: 1661007610
-      OWLIDLEFLY_5: 352988100
-      OWLIDLEFLY_4: -322480580
-      OWLIDLEFLY_1: -1873507811
-      OWLIDLEFLY_0: 1773542564
-      OWLIDLEFLY_6: -180261666
-      OWLIDLEFLY_3: 1852704340
+      OWLDEATH_3: -1591498339
+      OWLDEATH_7: -1885229185
+      OWLDEATH_4: -1514560192
+      OWLDEATH_5: -873911517
+      OWLDEATH_6: 597984886
+      OWLDEATH_2: 183476726
+      OWLDEATH_0: -576790984
+      OWLDEATH_1: -839796259
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

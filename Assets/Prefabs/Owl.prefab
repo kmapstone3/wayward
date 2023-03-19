@@ -146,7 +146,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.09094389, y: -0.3168306}
+  m_Offset: {x: 0.19954854, y: -0.31683058}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -157,7 +157,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.38188776, y: 0.8691865}
+  m_Size: {x: 0.59909713, y: 0.8691865}
   m_EdgeRadius: 0
 --- !u!61 &362970020565134876
 BoxCollider2D:
@@ -172,7 +172,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.07943857, y: -0.764432}
+  m_Offset: {x: 0.18994868, y: -0.764432}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -183,7 +183,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3393085, y: 0.054407}
+  m_Size: {x: 0.5603287, y: 0.054407}
   m_EdgeRadius: 0
 --- !u!114 &362970020565134950
 MonoBehaviour:
@@ -200,6 +200,7 @@ MonoBehaviour:
   rb: {fileID: 362970020565134874}
   anim: {fileID: 362970020565134877}
   mainCollider: {fileID: 362970020565134875}
+  jumpAudio: {fileID: 5711808085606608835}
   cameraController: {fileID: 0}
   other: {fileID: 0}
   moveSpeed: 4

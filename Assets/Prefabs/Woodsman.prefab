@@ -232,7 +232,7 @@ SpriteRenderer:
   m_SortingLayerID: 1489815667
   m_SortingLayer: 1
   m_SortingOrder: 10
-  m_Sprite: {fileID: 1462388304, guid: 9986901692f49d74699f1c9fae6be3dc, type: 3}
+  m_Sprite: {fileID: -514192463, guid: be493deb446bb564f82612ca9093d579, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -351,6 +351,7 @@ MonoBehaviour:
   rb: {fileID: 2255262379106932796}
   anim: {fileID: 2255262379106932787}
   mainCollider: {fileID: 2255262379106932797}
+  jumpAudio: {fileID: 5108357773073349847}
   cameraController: {fileID: 0}
   other: {fileID: 0}
   moveSpeed: 3

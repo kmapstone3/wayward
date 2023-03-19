@@ -22,6 +22,8 @@ public class Character : MonoBehaviour
     public Animator anim;
     public Collider2D mainCollider;
 
+    public AudioSource jumpAudio;
+
     public CameraController cameraController;
 
     public Character other;
@@ -137,6 +139,7 @@ public class Character : MonoBehaviour
     {
         // ANIM JUMP
         anim.SetTrigger("Jump");
+        jumpAudio.Play();
         isGrounded = false;
         
         rb.velocity = Vector2.up * jumpSpeed;
