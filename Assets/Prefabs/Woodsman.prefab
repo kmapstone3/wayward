@@ -233,7 +233,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 10
   m_Sprite: {fileID: -514192463, guid: be493deb446bb564f82612ca9093d579, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5647059, g: 0.5647059, b: 0.5647059, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -354,7 +354,7 @@ MonoBehaviour:
   jumpAudio: {fileID: 5108357773073349847}
   cameraController: {fileID: 0}
   other: {fileID: 0}
-  moveSpeed: 3
+  moveSpeed: 4
   jumpSpeed: 10
   deathAnimationDuration: 2
   owlTransform: {fileID: 2255262378916580152}
