@@ -22,6 +22,7 @@ public class Character : MonoBehaviour
     public Animator anim;
     public Collider2D mainCollider;
 
+    public AudioSource moveAudio;
     public AudioSource jumpAudio;
 
     public CameraController cameraController;
@@ -56,8 +57,6 @@ public class Character : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
-        Debug.Log(groundColliders.Count);
-        //groundColliders.ForEach(coll => Debug.Log(coll.name));
         UpdateAnimationParameters();
 
         if(!IsCharacterActive() && followTransform != null)
@@ -68,6 +67,11 @@ public class Character : MonoBehaviour
     {
         anim.SetBool("Moving", isMoving);
         anim.SetBool("Grounded", isGrounded);
+
+        if((isMoving && isGrounded) && moveAudio != null && !moveAudio.isPlaying)
+            moveAudio.Play();
+        if((!isMoving || !isGrounded) && moveAudio != null && moveAudio.isPlaying)
+            moveAudio.Stop();
     }
 
     public virtual void TestInput()
