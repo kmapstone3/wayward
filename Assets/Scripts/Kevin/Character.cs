@@ -36,7 +36,7 @@ public class Character : MonoBehaviour
     protected MovementState movementState = MovementState.Grounded;
 
     protected bool isMoving = false;
-    protected bool isGrounded = false;
+    protected bool isGrounded { get => groundColliders.Count > 0; }
     protected bool isDead = false;
 
     protected Transform followTransform = null;
@@ -44,6 +44,8 @@ public class Character : MonoBehaviour
     protected Interactable closestInteractable = null;
 
     private bool collidingInCurrentDirection = false;
+
+    private List<Collider2D> groundColliders = new List<Collider2D>();
 
     // Start is called before the first frame update
     void Start()
@@ -54,6 +56,8 @@ public class Character : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
+        Debug.Log(groundColliders.Count);
+        //groundColliders.ForEach(coll => Debug.Log(coll.name));
         UpdateAnimationParameters();
 
         if(!IsCharacterActive() && followTransform != null)
@@ -140,7 +144,7 @@ public class Character : MonoBehaviour
         // ANIM JUMP
         anim.SetTrigger("Jump");
         jumpAudio.Play();
-        isGrounded = false;
+        //isGrounded = false;
         
         rb.velocity = Vector2.up * jumpSpeed;
     }
@@ -222,12 +226,12 @@ public class Character : MonoBehaviour
         if(isDead)
         {
             if(other.gameObject.layer == LayerMask.NameToLayer("Ground") && !other.isTrigger)
-                isGrounded = true;
+                groundColliders.Add(other); //isGrounded = true;
         }
         else
         {
             if(!other.isTrigger)
-                isGrounded = true;
+                groundColliders.Add(other); //isGrounded = true;
         }
 
         // Interactables
@@ -242,12 +246,12 @@ public class Character : MonoBehaviour
         if(isDead)
         {
             if(other.gameObject.layer != LayerMask.NameToLayer("Ground") || other.isTrigger)
-                isGrounded = false;
+                groundColliders.Remove(other); //isGrounded = false;
         }
         else
         {
-            if(!other.isTrigger)
-                isGrounded = true;
+            if(!other.isTrigger && !groundColliders.Contains(other))
+                groundColliders.Add(other); //isGrounded = true;
         }
 
         // Interactables
@@ -271,8 +275,12 @@ public class Character : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         // Ground Check
+        //if(!other.isTrigger)
+        //    isGrounded = false;
         if(!other.isTrigger)
-            isGrounded = false;
+        {
+            groundColliders.Remove(other);
+        }
 
         // Interactables
         Interactable interactable = other.GetComponent<Interactable>();
