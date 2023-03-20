@@ -137,6 +137,8 @@ public class Character : MonoBehaviour
     {
         // Negate scale x, keep scale y
         transform.localScale *= new Vector2(-1, 1);
+
+        SetCollidingInCurrentDirection(false);
     }
 
     public virtual void Jump()
