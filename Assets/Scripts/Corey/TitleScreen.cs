@@ -18,6 +18,10 @@ public class TitleScreen : MonoBehaviour
         
     }
 
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 
     public void Play()
     {
